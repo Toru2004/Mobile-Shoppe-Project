@@ -49,22 +49,22 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabViewStock = new System.Windows.Forms.TabPage();
+            this.cdSclModelNumber = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.cbSclCompanyName = new System.Windows.Forms.ComboBox();
             this.txtStockAvailable = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.tabSearchCustomer = new System.Windows.Forms.TabPage();
-            this.label13 = new System.Windows.Forms.Label();
-            this.cdSclModelNumber = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtEntIMEINumber = new System.Windows.Forms.TextBox();
-            this.lnkSearch = new System.Windows.Forms.LinkLabel();
             this.dgvSearchResult = new System.Windows.Forms.DataGridView();
             this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MobileNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmailId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lnkSearch = new System.Windows.Forms.LinkLabel();
+            this.txtEntIMEINumber = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.tabCtrl.SuspendLayout();
             this.tabSales.SuspendLayout();
             this.tabViewStock.SuspendLayout();
@@ -297,6 +297,25 @@
             this.tabViewStock.Text = "ViewStock";
             this.tabViewStock.UseVisualStyleBackColor = true;
             // 
+            // cdSclModelNumber
+            // 
+            this.cdSclModelNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cdSclModelNumber.FormattingEnabled = true;
+            this.cdSclModelNumber.Location = new System.Drawing.Point(324, 162);
+            this.cdSclModelNumber.Name = "cdSclModelNumber";
+            this.cdSclModelNumber.Size = new System.Drawing.Size(273, 37);
+            this.cdSclModelNumber.TabIndex = 31;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(32, 238);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(183, 29);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "Stock Available:";
+            // 
             // cbSclCompanyName
             // 
             this.cbSclCompanyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -359,54 +378,6 @@
             this.tabSearchCustomer.Text = "SearchCustomerbyIMEI";
             this.tabSearchCustomer.UseVisualStyleBackColor = true;
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(32, 238);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(183, 29);
-            this.label13.TabIndex = 30;
-            this.label13.Text = "Stock Available:";
-            // 
-            // cdSclModelNumber
-            // 
-            this.cdSclModelNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cdSclModelNumber.FormattingEnabled = true;
-            this.cdSclModelNumber.Location = new System.Drawing.Point(324, 162);
-            this.cdSclModelNumber.Name = "cdSclModelNumber";
-            this.cdSclModelNumber.Size = new System.Drawing.Size(273, 37);
-            this.cdSclModelNumber.TabIndex = 31;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(59, 82);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(217, 29);
-            this.label14.TabIndex = 28;
-            this.label14.Text = "Enter IMEI Number";
-            // 
-            // txtEntIMEINumber
-            // 
-            this.txtEntIMEINumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEntIMEINumber.Location = new System.Drawing.Point(294, 79);
-            this.txtEntIMEINumber.Name = "txtEntIMEINumber";
-            this.txtEntIMEINumber.Size = new System.Drawing.Size(331, 34);
-            this.txtEntIMEINumber.TabIndex = 29;
-            // 
-            // lnkSearch
-            // 
-            this.lnkSearch.AutoSize = true;
-            this.lnkSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkSearch.Location = new System.Drawing.Point(309, 150);
-            this.lnkSearch.Name = "lnkSearch";
-            this.lnkSearch.Size = new System.Drawing.Size(89, 29);
-            this.lnkSearch.TabIndex = 30;
-            this.lnkSearch.TabStop = true;
-            this.lnkSearch.Text = "Search";
-            // 
             // dgvSearchResult
             // 
             this.dgvSearchResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -450,6 +421,35 @@
             this.Address.Name = "Address";
             this.Address.Width = 125;
             // 
+            // lnkSearch
+            // 
+            this.lnkSearch.AutoSize = true;
+            this.lnkSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkSearch.Location = new System.Drawing.Point(309, 150);
+            this.lnkSearch.Name = "lnkSearch";
+            this.lnkSearch.Size = new System.Drawing.Size(89, 29);
+            this.lnkSearch.TabIndex = 30;
+            this.lnkSearch.TabStop = true;
+            this.lnkSearch.Text = "Search";
+            // 
+            // txtEntIMEINumber
+            // 
+            this.txtEntIMEINumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEntIMEINumber.Location = new System.Drawing.Point(294, 79);
+            this.txtEntIMEINumber.Name = "txtEntIMEINumber";
+            this.txtEntIMEINumber.Size = new System.Drawing.Size(331, 34);
+            this.txtEntIMEINumber.TabIndex = 29;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(59, 82);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(217, 29);
+            this.label14.TabIndex = 28;
+            this.label14.Text = "Enter IMEI Number";
+            // 
             // UserHomepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -459,6 +459,7 @@
             this.Name = "UserHomepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserHomepage";
+            this.Load += new System.EventHandler(this.UserHomepage_Load);
             this.tabCtrl.ResumeLayout(false);
             this.tabSales.ResumeLayout(false);
             this.tabSales.PerformLayout();
