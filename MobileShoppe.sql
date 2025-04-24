@@ -1,6 +1,6 @@
-﻿CREATE DATABASE MobileShoppe;
+﻿CREATE DATABASE MobileShoppedb;
 GO
-USE MobileShoppe;
+USE MobileShoppedb;
 GO
 
 -- tbl_User

@@ -36,7 +36,7 @@ namespace mobileshoppe
 
                 {
                     conn.Open();
-                    cmd = new SqlCommand("SELECT ISNULL(MAX(compID),0) from company", conn);
+                    cmd = new SqlCommand("SELECT ISNULL(MAX(compID),0) from tbl_Company", conn);
                     int i = (Convert.ToInt32(cmd.ExecuteScalar()));
                     i++;
                     txtCompID.Text = i.ToString();
@@ -59,7 +59,7 @@ namespace mobileshoppe
 
                 {
                     conn.Open();
-                    cmd = new SqlCommand("SELECT ISNULL(MAX(ModID),0) from model", conn);
+                    cmd = new SqlCommand("SELECT ISNULL(MAX(ModID),0) from tbl_Model", conn);
                     int i = (Convert.ToInt32(cmd.ExecuteScalar()));
                     i++;
                     txtModID.Text = i.ToString();
@@ -82,7 +82,7 @@ namespace mobileshoppe
 
                 {
                     conn.Open();
-                    cmd = new SqlCommand("SELECT ISNULL(MAX(TransID),0) from [transaction]", conn);
+                    cmd = new SqlCommand("SELECT ISNULL(MAX(TransID),0) from tbl_Transaction", conn);
                     int i = (Convert.ToInt32(cmd.ExecuteScalar()));
                     i++;
                     txtTransID.Text = i.ToString();
@@ -119,7 +119,7 @@ namespace mobileshoppe
                 string compName = txtCompName.Text;
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
                 {
-                    cmd = new SqlCommand("Insert into company values(@compID, @compname) ", conn);
+                    cmd = new SqlCommand("Insert into tbl_Company values(@compID, @compname) ", conn);
                     cmd.Parameters.AddWithValue("@compID", compID);
                     cmd.Parameters.AddWithValue("@compname", compName);
 
@@ -150,12 +150,12 @@ namespace mobileshoppe
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
             {
                 conn.Open();
-                using (SqlCommand cmdGetModId = new SqlCommand("SELECT ModID FROM model WHERE ModNum = @modNum", conn))
+                using (SqlCommand cmdGetModId = new SqlCommand("SELECT ModID FROM tbl_Model WHERE ModelNum = @modNum", conn))
                 {
                     cmdGetModId.Parameters.AddWithValue("@modNum", cboModNo.Text.Trim());
                     int modID = Convert.ToInt32(cmdGetModId.ExecuteScalar());
 
-                    cmd = new SqlCommand("Insert into [transaction] values(@transID, @modID, @Aquantity, GETDATE(), @amount) ", conn);
+                    cmd = new SqlCommand("Insert into tbl_Transaction values(@transID, @modID, @Aquantity, GETDATE(), @amount) ", conn);
                     cmd.Parameters.AddWithValue("@transID", transID);
                     cmd.Parameters.AddWithValue("@modID", modID);
                     cmd.Parameters.AddWithValue("@Aquantity", Aquantity);
@@ -163,7 +163,7 @@ namespace mobileshoppe
 
 
                     cmd.ExecuteNonQuery();
-                    using (SqlCommand cmdmodel = new SqlCommand("update model set AvailableQty =  @Aquantity where ModID = @modID ", conn))
+                    using (SqlCommand cmdmodel = new SqlCommand("update tbl_Model set AvailableQty =  @Aquantity where ModID = @modID ", conn))
                     {
                         cmdmodel.Parameters.AddWithValue("@Aquantity", Aquantity);
                         cmdmodel.Parameters.AddWithValue("@modID", modID);
@@ -184,26 +184,26 @@ namespace mobileshoppe
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
                 {
                     conn.Open();
-                    cmd = new SqlCommand("SELECT * from company", conn);
+                    cmd = new SqlCommand("SELECT * from tbl_Company", conn);
                     da = new SqlDataAdapter(cmd);
                     ds = new DataSet();
-                    da.Fill(ds, "company");//khoogn có company thì k hiện đâu
+                    da.Fill(ds, "tbl_Company");//khoogn có tbl_Company thì k hiện đâu
                 }
-                cboCompNameMod.DataSource = ds.Tables["company"];
+                cboCompNameMod.DataSource = ds.Tables["tbl_Company"];
                 cboCompNameMod.DisplayMember = "compName";
                 cboCompNameMod.ValueMember = "compID";
 
-                cboCompNameMobile.DataSource = ds.Tables["company"];
+                cboCompNameMobile.DataSource = ds.Tables["tbl_Company"];
                 cboCompNameMobile.DisplayMember = "compName";
                 cboCompNameMobile.ValueMember = "compID";
 
-                cboCompNameUp.DataSource = ds.Tables["company"];
+                cboCompNameUp.DataSource = ds.Tables["tbl_Company"];
                 cboCompNameUp.DisplayMember = "compName";
                 cboCompNameUp.ValueMember = "compID";
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error binding company names: " + ex.Message);
+                MessageBox.Show("Error binding tbl_Company names: " + ex.Message);
             }
         }
         internal void BindingModelNumber()
@@ -213,19 +213,19 @@ namespace mobileshoppe
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
                 {
                     conn.Open();
-                    cmd = new SqlCommand("SELECT * from model", conn);
+                    cmd = new SqlCommand("SELECT * from tbl_Model", conn);
                     da = new SqlDataAdapter(cmd);
                     ds = new DataSet();
-                    da.Fill(ds, "model");//khoogn có company thì k hiện đâu
+                    da.Fill(ds, "tbl_Model");//khoogn có tbl_Company thì k hiện đâu
                 }
-                cboModNoMobile.DataSource = ds.Tables["model"];
+                cboModNoMobile.DataSource = ds.Tables["tbl_Model"];
                 cboModNoMobile.DisplayMember = "modNum";
                 cboModNoMobile.ValueMember = "modID";
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error binding model names: " + ex.Message);
+                MessageBox.Show("Error binding tbl_Model names: " + ex.Message);
             }
         }
         private void btnAddMod_Click(object sender, EventArgs e)
@@ -237,7 +237,7 @@ namespace mobileshoppe
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
             {
                 conn.Open();
-                cmd = new SqlCommand("Insert into model values(@modID, @modNum, @AvailableQty, @compID) ", conn);
+                cmd = new SqlCommand("Insert into tbl_Model values(@modID, @modNum, @AvailableQty, @compID) ", conn);
                 cmd.Parameters.AddWithValue("@modID", modID);
                 cmd.Parameters.AddWithValue("@compID", compID);
                 cmd.Parameters.AddWithValue("@AvailableQty", 0);
@@ -261,7 +261,7 @@ namespace mobileshoppe
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
             {
                 conn.Open();
-                cmd = new SqlCommand("SELECT model.ModNum FROM model INNER JOIN company ON model.compID = company.compID WHERE company.compName = @compName;", conn);
+                cmd = new SqlCommand("SELECT tbl_Model.ModelNum FROM tbl_Model INNER JOIN tbl_Company ON tbl_Model.compID = tbl_Company.compID WHERE tbl_Company.compName = @compName;", conn);
                 cmd.Parameters.AddWithValue("@compName", cboCompNameMobile.Text);
 
                 dr = cmd.ExecuteReader();
@@ -271,8 +271,8 @@ namespace mobileshoppe
 
                     while (dr.Read())
                     {
-                        // Thêm giá trị từ cột "ModNum" vào cboModNoMobile
-                        cboModNoMobile.Items.Add(dr["ModNum"]);
+                        // Thêm giá trị từ cột "ModelNum" vào cboModNoMobile
+                        cboModNoMobile.Items.Add(dr["ModelNum"]);
                     }
                 }
             }
@@ -283,7 +283,7 @@ namespace mobileshoppe
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
             {
                 conn.Open();
-                cmd = new SqlCommand("SELECT model.ModNum FROM model INNER JOIN company ON model.compID = company.compID WHERE company.compName = @compName;", conn);
+                cmd = new SqlCommand("SELECT tbl_Model.ModelNum FROM tbl_Model INNER JOIN tbl_Company ON tbl_Model.compID = tbl_Company.compID WHERE tbl_Company.compName = @compName;", conn);
                 cmd.Parameters.AddWithValue("@compName", cboCompNameUp.Text);
 
                 dr = cmd.ExecuteReader();
@@ -293,8 +293,8 @@ namespace mobileshoppe
 
                     while (dr.Read())
                     {
-                        // Thêm giá trị từ cột "ModNum" vào cboModNoMobile
-                        cboModNo.Items.Add(dr["ModNum"]);
+                        // Thêm giá trị từ cột "ModelNum" vào cboModNoMobile
+                        cboModNo.Items.Add(dr["ModelNum"]);
                     }
                 }
             }
@@ -309,12 +309,12 @@ namespace mobileshoppe
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
             {
                 conn.Open();
-                using (SqlCommand getModIdCmd = new SqlCommand("SELECT ModID FROM model WHERE ModNum = @modNum", conn))
+                using (SqlCommand getModIdCmd = new SqlCommand("SELECT ModID FROM tbl_Model WHERE ModelNum = @modNum", conn))
                 {
                     getModIdCmd.Parameters.AddWithValue("@modNum", cboModNoMobile.Text.Trim());
                     int modID = Convert.ToInt32(getModIdCmd.ExecuteScalar());
 
-                    cmd = new SqlCommand("Insert into [mobile] values(@IMEINO, @modID, 'Not Sold', @price, @warranty) ", conn);
+                    cmd = new SqlCommand("Insert into tbl_Mobile values(@IMEINO, @modID, 'Not Sold', @price, @warranty) ", conn);
                     cmd.Parameters.AddWithValue("@IMEINO", IMEINO);
                     cmd.Parameters.AddWithValue("@modID", modID);
                     cmd.Parameters.AddWithValue("@price", price);
@@ -387,7 +387,7 @@ namespace mobileshoppe
 
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
             {
-                cmd = new SqlCommand("select s1.salesID, c1.compName, md1.ModNum, s1.IMEINO, s1.price from sales s1 inner join mobile mb1 on s1.IMEINO = mb1.IMEINO   inner join model md1 on mb1.modID = md1.ModID   inner join company c1 on  md1.compID = c1.compID where s1.salesDate = @date", conn);
+                cmd = new SqlCommand("select s1.salesID, c1.compName, md1.ModelNum, s1.IMEINO, s1.price from tbl_Sales s1 inner join mobile mb1 on s1.IMEINO = mb1.IMEINO   inner join tbl_Model md1 on mb1.modID = md1.ModID   inner join tbl_Company c1 on  md1.compID = c1.compID where s1.salesDate = @date", conn);
                 cmd.Parameters.AddWithValue("@date", date);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -411,7 +411,7 @@ namespace mobileshoppe
 
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
             {
-                cmd = new SqlCommand("select s1.salesID, c1.compName, md1.ModNum, s1.IMEINO, s1.price\r\nfrom sales s1 inner join mobile mb1 on s1.IMEINO = mb1.IMEINO\r\n\t  inner join model md1 on mb1.modID = md1.ModID\r\n\t  inner join company c1 on  md1.compID = c1.compID\r\nWHERE s1.salesDate BETWEEN @dateMin AND @dateMax;", conn);
+                cmd = new SqlCommand("select s1.salesID, c1.compName, md1.ModelNum, s1.IMEINO, s1.price\r\nfrom tbl_Sales s1 inner join mobile mb1 on s1.IMEINO = mb1.IMEINO\r\n\t  inner join tbl_Model md1 on mb1.modID = md1.ModID\r\n\t  inner join tbl_Company c1 on  md1.compID = c1.compID\r\nWHERE s1.salesDate BETWEEN @dateMin AND @dateMax;", conn);
                 cmd.Parameters.AddWithValue("@dateMin", dateMin);
                 cmd.Parameters.AddWithValue("@dateMax", dateMax);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);

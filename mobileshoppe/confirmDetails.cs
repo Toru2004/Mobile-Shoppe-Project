@@ -73,7 +73,7 @@ namespace mobileshoppe
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
             {
                 conn.Open();
-                using (SqlCommand cmd = new SqlCommand("Select warranty from [mobile] where IMEINO = @IMEINO ", conn))
+                using (SqlCommand cmd = new SqlCommand("Select warranty from tbl_Mobile where IMEINO = @IMEINO ", conn))
                 {
                     cmd.Parameters.AddWithValue("@IMEINO", IMEI);
                     cmd.ExecuteNonQuery();
@@ -93,7 +93,7 @@ namespace mobileshoppe
 
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(custID),0) from customer", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(custID),0) from tbl_Customer", conn);
                     int i = (Convert.ToInt32(cmd.ExecuteScalar()));
                     i++; 
                     return i;
@@ -114,7 +114,7 @@ namespace mobileshoppe
 
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(salesID),0) from sales", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(salesID),0) from tbl_Sales", conn);
                     int i = (Convert.ToInt32(cmd.ExecuteScalar()));
                     i++;
                     return i;
@@ -142,7 +142,7 @@ namespace mobileshoppe
                 conn.Open();
                 int custID = AutoCustomerID();
                 int salesID = autoSalesID();
-                using (SqlCommand cmd = new SqlCommand("insert into customer values(@custID, @custName, @MobileNo, @mailId, @Address)", conn))
+                using (SqlCommand cmd = new SqlCommand("insert into tbl_Customer values(@custID, @custName, @MobileNo, @mailId, @Address)", conn))
                 {
                     cmd.Parameters.AddWithValue("@custID", custID);
                     cmd.Parameters.AddWithValue("@custName", CustName);
@@ -150,27 +150,27 @@ namespace mobileshoppe
                     cmd.Parameters.AddWithValue("@mailId", email);
                     cmd.Parameters.AddWithValue("@Address", Address);
                     cmd.ExecuteNonQuery();
-                    using (SqlCommand cmdSales = new SqlCommand("insert into sales values(@salesID, @IMEINO, GETDATE(), @price, @custID)", conn))
+                    using (SqlCommand cmdSales = new SqlCommand("insert into tbl_Sales values(@salesID, @IMEINO, GETDATE(), @price, @custID)", conn))
                     {
                         cmdSales.Parameters.AddWithValue("@salesID", salesID);
                         cmdSales.Parameters.AddWithValue("@IMEINO", IMEI);
                         cmdSales.Parameters.AddWithValue("@price", Price);
                         cmdSales.Parameters.AddWithValue("@custID", custID);
                         cmdSales.ExecuteNonQuery();
-                        using ( SqlCommand cmdmobile = new SqlCommand("update [mobile] set status = 'Sold' where IMEINO = @IMEINO",conn))
+                        using ( SqlCommand cmdmobile = new SqlCommand("update tbl_Mobile set status = 'Sold' where IMEINO = @IMEINO",conn))
                         {
                             cmdmobile.Parameters.AddWithValue("@IMEINO", IMEI);
                             cmdmobile.ExecuteNonQuery();
-                            using (SqlCommand cmdGetModId = new SqlCommand("SELECT ModID FROM model WHERE ModNum = @modNum", conn))
+                            using (SqlCommand cmdGetModId = new SqlCommand("SELECT ModID FROM tbl_Model WHERE ModelNum = @modNum", conn))
                             {
                                 cmdGetModId.Parameters.AddWithValue("@modNum", lblmodnum.Text);
                                 int modID = Convert.ToInt32(cmdGetModId.ExecuteScalar());
 
-                                using (SqlCommand cmdGetQty = new SqlCommand("SELECT AvailableQty FROM model WHERE ModNum = @modNum", conn))
+                                using (SqlCommand cmdGetQty = new SqlCommand("SELECT AvailableQty FROM tbl_Model WHERE ModelNum = @modNum", conn))
                                 {
                                     cmdGetQty.Parameters.AddWithValue("@modNum", lblmodnum.Text);
                                     int Aquantity = Convert.ToInt32(cmdGetQty.ExecuteScalar());
-                                    using (SqlCommand cmdmodel = new SqlCommand("update model set AvailableQty =  @Aquantity -1 where ModID = @modID ", conn))
+                                    using (SqlCommand cmdmodel = new SqlCommand("update tbl_Model set AvailableQty =  @Aquantity -1 where ModID = @modID ", conn))
                                     {
                                         cmdmodel.Parameters.AddWithValue("@Aquantity", Aquantity);
                                         cmdmodel.Parameters.AddWithValue("@modID", modID);
