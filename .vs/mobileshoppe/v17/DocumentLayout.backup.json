@@ -1,0 +1,113 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\XDHTQL\\XDHTTTQL\\mobileshoppe\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6EAB6A84-7E36-4543-BD38-CD48355BB106}|mobileshoppe\\mobileshoppe.csproj|d:\\xdhtql\\xdhtttql\\mobileshoppe\\mobileshoppe\\userhomepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EAB6A84-7E36-4543-BD38-CD48355BB106}|mobileshoppe\\mobileshoppe.csproj|solutionrelative:mobileshoppe\\userhomepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EAB6A84-7E36-4543-BD38-CD48355BB106}|mobileshoppe\\mobileshoppe.csproj|d:\\xdhtql\\xdhtttql\\mobileshoppe\\mobileshoppe\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{6EAB6A84-7E36-4543-BD38-CD48355BB106}|mobileshoppe\\mobileshoppe.csproj|solutionrelative:mobileshoppe\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EAB6A84-7E36-4543-BD38-CD48355BB106}|mobileshoppe\\mobileshoppe.csproj|d:\\xdhtql\\xdhtttql\\mobileshoppe\\mobileshoppe\\userlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EAB6A84-7E36-4543-BD38-CD48355BB106}|mobileshoppe\\mobileshoppe.csproj|solutionrelative:mobileshoppe\\userlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EAB6A84-7E36-4543-BD38-CD48355BB106}|mobileshoppe\\mobileshoppe.csproj|d:\\xdhtql\\xdhtttql\\mobileshoppe\\mobileshoppe\\forgotpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EAB6A84-7E36-4543-BD38-CD48355BB106}|mobileshoppe\\mobileshoppe.csproj|solutionrelative:mobileshoppe\\forgotpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EAB6A84-7E36-4543-BD38-CD48355BB106}|mobileshoppe\\mobileshoppe.csproj|d:\\xdhtql\\xdhtttql\\mobileshoppe\\mobileshoppe\\page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EAB6A84-7E36-4543-BD38-CD48355BB106}|mobileshoppe\\mobileshoppe.csproj|solutionrelative:mobileshoppe\\page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 100,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "forgotPassword.cs",
+              "DocumentMoniker": "D:\\XDHTQL\\XDHTTTQL\\mobileshoppe\\mobileshoppe\\forgotPassword.cs",
+              "RelativeDocumentMoniker": "mobileshoppe\\forgotPassword.cs",
+              "ToolTip": "D:\\XDHTQL\\XDHTTTQL\\mobileshoppe\\mobileshoppe\\forgotPassword.cs",
+              "RelativeToolTip": "mobileshoppe\\forgotPassword.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAA1wB0AAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T00:59:02.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "userHomepage.cs",
+              "DocumentMoniker": "D:\\XDHTQL\\XDHTTTQL\\mobileshoppe\\mobileshoppe\\userHomepage.cs",
+              "RelativeDocumentMoniker": "mobileshoppe\\userHomepage.cs",
+              "ToolTip": "D:\\XDHTQL\\XDHTTTQL\\mobileshoppe\\mobileshoppe\\userHomepage.cs",
+              "RelativeToolTip": "mobileshoppe\\userHomepage.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAMwCQAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T00:58:23.419Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "App.config",
+              "DocumentMoniker": "D:\\XDHTQL\\XDHTTTQL\\mobileshoppe\\mobileshoppe\\App.config",
+              "RelativeDocumentMoniker": "mobileshoppe\\App.config",
+              "ToolTip": "D:\\XDHTQL\\XDHTTTQL\\mobileshoppe\\mobileshoppe\\App.config",
+              "RelativeToolTip": "mobileshoppe\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-04-24T00:46:39.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Page.cs",
+              "DocumentMoniker": "D:\\XDHTQL\\XDHTTTQL\\mobileshoppe\\mobileshoppe\\Page.cs",
+              "RelativeDocumentMoniker": "mobileshoppe\\Page.cs",
+              "ToolTip": "D:\\XDHTQL\\XDHTTTQL\\mobileshoppe\\mobileshoppe\\Page.cs",
+              "RelativeToolTip": "mobileshoppe\\Page.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T00:45:45.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "userLogin.cs",
+              "DocumentMoniker": "D:\\XDHTQL\\XDHTTTQL\\mobileshoppe\\mobileshoppe\\userLogin.cs",
+              "RelativeDocumentMoniker": "mobileshoppe\\userLogin.cs",
+              "ToolTip": "D:\\XDHTQL\\XDHTTTQL\\mobileshoppe\\mobileshoppe\\userLogin.cs",
+              "RelativeToolTip": "mobileshoppe\\userLogin.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T00:44:56.107Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
