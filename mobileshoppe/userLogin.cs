@@ -30,15 +30,15 @@ namespace mobileshoppe
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            string username = txtUid.Text;
-            string pwd = txtPwd.Text;
+            string Username = txtUid.Text;
+            string Pwd = txtPwd.Text;
             int check = 0;
 
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
             {
-                SqlCommand cmd = new SqlCommand("select count(*) from tbl_User where username = @username and pwd = @pwd  ", conn);
-                cmd.Parameters.AddWithValue("@username", username);
-                cmd.Parameters.AddWithValue("@pwd", pwd);
+                SqlCommand cmd = new SqlCommand("select count(*) from tbl_User where Username = @Username and Pwd = @Pwd  ", conn);
+                cmd.Parameters.AddWithValue("@Username", Username);
+                cmd.Parameters.AddWithValue("@Pwd", Pwd);
 
                 conn.Open();
                 cmd.ExecuteNonQuery();

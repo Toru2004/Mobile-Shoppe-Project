@@ -5,8 +5,8 @@ GO
 
 -- tbl_User
 CREATE TABLE tbl_User (
-    UserName VARCHAR(20) PRIMARY KEY,
-    PWD VARCHAR(20), -- Password
+    Username VARCHAR(20) PRIMARY KEY,
+    Pwd VARCHAR(20), -- Password
     EmployeeName VARCHAR(20),
     Address VARCHAR(MAX),
     MobileNumber VARCHAR(20),
@@ -15,22 +15,22 @@ CREATE TABLE tbl_User (
 
 -- tbl_Company
 CREATE TABLE tbl_Company (
-    ComId VARCHAR(20) PRIMARY KEY,
-    CName VARCHAR(20)
+    CompanyID VARCHAR(20) PRIMARY KEY,
+    CompanyName VARCHAR(20)
 );
 
 -- tbl_Model
 CREATE TABLE tbl_Model (
-    ModelId VARCHAR(20) PRIMARY KEY,
-    ComId VARCHAR(20),
-    ModelNum VARCHAR(20),
+    ModelID VARCHAR(20) PRIMARY KEY,
+    CompanyId VARCHAR(20),
+    ModelNumber VARCHAR(20),
     AvailableQty INT,
-    FOREIGN KEY (ComId) REFERENCES tbl_Company(ComId)
+    FOREIGN KEY (CompanyId) REFERENCES tbl_Company(CompanyId)
 );
 
 -- tbl_Transaction
 CREATE TABLE tbl_Transaction (
-    TransId VARCHAR(20) PRIMARY KEY,
+    TransactionID VARCHAR(20) PRIMARY KEY,
     ModelId VARCHAR(20),
     Quantity INT,
     Date DATE,
@@ -50,31 +50,31 @@ CREATE TABLE tbl_Mobile (
 
 -- tbl_Customer
 CREATE TABLE tbl_Customer (
-    CusId VARCHAR(20) PRIMARY KEY,
-    CustName VARCHAR(20),
+    CustomerID VARCHAR(20) PRIMARY KEY,
+    CustomerName VARCHAR(20),
     MobileNumber VARCHAR(20),
-    EmailId VARCHAR(20),
+    EmailID VARCHAR(20),
     Address VARCHAR(MAX)
 );
 
 -- tbl_Sales
 CREATE TABLE tbl_Sales (
-    SlsId VARCHAR(20) PRIMARY KEY,
+    SalesID VARCHAR(20) PRIMARY KEY,
     IMEINO VARCHAR(50),
-    PurchageDate DATE,
+    SalesDate DATE,
     Price MONEY,
-    CusId VARCHAR(20),
+    CustomerID VARCHAR(20),
     FOREIGN KEY (IMEINO) REFERENCES tbl_Mobile(IMEINO),
-    FOREIGN KEY (CusId) REFERENCES tbl_Customer(CusId)
+    FOREIGN KEY (CustomerID) REFERENCES tbl_Customer(CustomerID)
 );
 
 
 INSERT INTO tbl_User VALUES
-('user1', '1', 'Nguyen Van A', '123 Le Loi, Q1', '0909123456', 'Tên thú cưng'),
-('user2', '1', 'Tran Thi B', '456 Tran Hung Dao, Q5', '0911123456', 'Món ăn yêu thích'),
-('admin', '1', 'Le Van C', '789 Cach Mang Thang 8, Q3', '0933123456', 'Trường cấp 1'),
-('user3', '1', 'Pham Duy D', '321 Nguyen Thi Minh Khai, Q10', '0944123456', 'Số yêu thích'),
-('user4', '1', 'Doan Thi E', '654 Hai Ba Trung, Q1', '0955123456', 'Động vật yêu thích');
+('user1', '1', 'Nguyen Van A', '123 Le Loi, Q1', '0909123456', N'Tên thú cưng'),
+('user2', '1', 'Tran Thi B', '456 Tran Hung Dao, Q5', '0911123456', N'Món ăn yêu thích'),
+('admin', '1', 'Le Van C', '789 Cach Mang Thang 8, Q3', '0933123456', N'Trường cấp 1'),
+('user3', '1', 'Pham Duy D', '321 Nguyen Thi Minh Khai, Q10', '0944123456', N'Số yêu thích'),
+('user4', '1', 'Doan Thi E', '654 Hai Ba Trung, Q1', '0955123456', N'Động vật yêu thích');
 GO
 
 INSERT INTO tbl_Company VALUES
@@ -125,7 +125,7 @@ INSERT INTO tbl_Sales VALUES
 ('S005', 'IMEI0002', '2025-04-14', 15000000, 'CU005');
 GO
 
- --drop database mobileshoppe;
+ --drop database MobileShoppedb;
 
 -- Disable all foreign key constraints
 -- EXEC sp_msforeachtable "ALTER TABLE ? NOCHECK CONSTRAINT ALL";
@@ -145,24 +145,24 @@ END
 GO
 
 CREATE PROCEDURE sp_AddCompany
-    @ComId VARCHAR(20),
+    @CompanyId VARCHAR(20),
     @CName VARCHAR(20)
 AS
 BEGIN
-    INSERT INTO tbl_Company (ComId, CName)
-    VALUES (@ComId, @CName)
+    INSERT INTO tbl_Company (CompanyId, CName)
+    VALUES (@CompanyId, @CName)
 END
 GO
 
 CREATE PROCEDURE sp_AddModel
     @ModelId VARCHAR(20),
-    @ComId VARCHAR(20),
-    @ModelNum VARCHAR(20),
+    @CompanyId VARCHAR(20),
+    @ModelNumber VARCHAR(20),
     @AvailableQty INT
 AS
 BEGIN
-    INSERT INTO tbl_Model (ModelId, ComId, ModelNum, AvailableQty)
-    VALUES (@ModelId, @ComId, @ModelNum, @AvailableQty)
+    INSERT INTO tbl_Model (ModelId, CompanyId, ModelNumber, AvailableQty)
+    VALUES (@ModelId, @CompanyId, @ModelNumber, @AvailableQty)
 END
 GO
 
@@ -195,7 +195,7 @@ CREATE PROCEDURE sp_SalesReport_ByDate
 AS
 BEGIN
     SELECT * FROM tbl_Sales
-    WHERE CONVERT(DATE, PurchageDate) = @Date
+    WHERE CONVERT(DATE, SalesDate) = @Date
 END
 GO
 
@@ -205,7 +205,7 @@ CREATE PROCEDURE sp_SalesReport_DateToDate
 AS
 BEGIN
     SELECT * FROM tbl_Sales
-    WHERE PurchageDate BETWEEN @FromDate AND @ToDate
+    WHERE SalesDate BETWEEN @FromDate AND @ToDate
 END
 GO
 
@@ -224,28 +224,28 @@ END
 GO
 
 CREATE PROCEDURE sp_AddCustomer
-    @CusId VARCHAR(20),
-    @CustName VARCHAR(20),
+    @CustomerID VARCHAR(20),
+    @CustomerName VARCHAR(20),
     @MobileNumber VARCHAR(20),
-    @EmailId VARCHAR(20),
+    @EmailID VARCHAR(20),
     @Address VARCHAR(MAX)
 AS
 BEGIN
-    INSERT INTO tbl_Customer (CusId, CustName, MobileNumber, EmailId, Address)
-    VALUES (@CusId, @CustName, @MobileNumber, @EmailId, @Address)
+    INSERT INTO tbl_Customer (CustomerID, CustomerName, MobileNumber, EmailID, Address)
+    VALUES (@CustomerID, @CustomerName, @MobileNumber, @EmailID, @Address)
 END
 GO
 
 CREATE PROCEDURE sp_SellMobile
     @SlsId VARCHAR(20),
     @IMEINO VARCHAR(50),
-    @PurchageDate DATE,
+    @SalesDate DATE,
     @Price MONEY,
-    @CusId VARCHAR(20)
+    @CustomerID VARCHAR(20)
 AS
 BEGIN
-    INSERT INTO tbl_Sales (SlsId, IMEINO, PurchageDate, Price, CusId)
-    VALUES (@SlsId, @IMEINO, @PurchageDate, @Price, @CusId)
+    INSERT INTO tbl_Sales (SlsId, IMEINO, SalesDate, Price, CustomerID)
+    VALUES (@SlsId, @IMEINO, @SalesDate, @Price, @CustomerID)
 
     -- Cập nhật trạng thái máy đã bán
     UPDATE tbl_Mobile
@@ -257,9 +257,9 @@ GO
 CREATE PROCEDURE sp_ViewStock
 AS
 BEGIN
-    SELECT m.ModelId, m.ModelNum, c.CName, m.AvailableQty
+    SELECT m.ModelId, m.ModelNumber, c.CName, m.AvailableQty
     FROM tbl_Model m
-    INNER JOIN tbl_Company c ON m.ComId = c.ComId
+    INNER JOIN tbl_Company c ON m.CompanyId = c.CompanyId
 END
 GO
 
@@ -269,7 +269,7 @@ AS
 BEGIN
     SELECT c.*
     FROM tbl_Customer c
-    INNER JOIN tbl_Sales s ON c.CusId = s.CusId
+    INNER JOIN tbl_Sales s ON c.CustomerID = s.CustomerID
     WHERE s.IMEINO = @IMEINO
 END
 GO

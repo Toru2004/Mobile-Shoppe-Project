@@ -21,15 +21,15 @@ namespace mobileshoppe
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            string username = txtUid.Text;
-            string hint = txtHint.Text;
+            string Username = txtUid.Text;
+            string Hint = txtHint.Text;
             string password;
 
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
             {
-                SqlCommand cmd = new SqlCommand("select pwd from tbl_User where username = @username and hint = @hint  ", conn);
-                cmd.Parameters.AddWithValue("@username", username);
-                cmd.Parameters.AddWithValue("@hint", hint);
+                SqlCommand cmd = new SqlCommand("select Pwd from tbl_User where Username = @Username and Hint = @Hint  ", conn);
+                cmd.Parameters.AddWithValue("@Username", Username);
+                cmd.Parameters.AddWithValue("@Hint", Hint);
 
                 conn.Open();
                 cmd.ExecuteNonQuery();

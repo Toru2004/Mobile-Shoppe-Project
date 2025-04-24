@@ -31,8 +31,8 @@ namespace mobileshoppe
             {
                 conn.Open();
                 cmd.Parameters.Clear();
-                cmd = new SqlCommand("select AvailableQty from tbl_Model  where ModelNum = @ModelNum", conn);
-                cmd.Parameters.AddWithValue("@ModelNum", cboModNumVS.Text);
+                cmd = new SqlCommand("select AvailableQty from tbl_Model  where ModelNumber = @ModelNumber", conn);
+                cmd.Parameters.AddWithValue("@ModelNumber", cboModNumVS.Text);
                 cmd.ExecuteNonQuery(); 
                 int i = (Convert.ToInt32(cmd.ExecuteScalar()));
                 txtStock.Text = i.ToString();
@@ -51,12 +51,12 @@ namespace mobileshoppe
                     da.Fill(ds, "tbl_Company");//khoogn có tbl_Company thì k hiện đâu
                 }
                 cboCompName.DataSource = ds.Tables["tbl_Company"];
-                cboCompName.DisplayMember = "compName";
-                cboCompName.ValueMember = "compID";
+                cboCompName.DisplayMember = "CompanyName";
+                cboCompName.ValueMember = "CompanyID";
 
                 cboCompNameVS.DataSource = ds.Tables["tbl_Company"];
-                cboCompNameVS.DisplayMember = "compName";
-                cboCompNameVS.ValueMember = "compID";
+                cboCompNameVS.DisplayMember = "CompanyName";
+                cboCompNameVS.ValueMember = "CompanyID";
             }
             catch (Exception ex)
             {
@@ -68,8 +68,8 @@ namespace mobileshoppe
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
             {
                 conn.Open();
-                cmd = new SqlCommand("SELECT tbl_Model.ModelNum FROM tbl_Model INNER JOIN tbl_Company ON tbl_Model.compID = tbl_Company.compID WHERE tbl_Company.compName = @compName;", conn);
-                cmd.Parameters.AddWithValue("@compName", cboCompName.Text);
+                cmd = new SqlCommand("SELECT tbl_Model.ModelNumber FROM tbl_Model INNER JOIN tbl_Company ON tbl_Model.CompanyID = tbl_Company.CompanyID WHERE tbl_Company.CompanyName = @CompanyName;", conn);
+                cmd.Parameters.AddWithValue("@CompanyName", cboCompName.Text);
 
                 dr = cmd.ExecuteReader();
                 {
@@ -78,8 +78,8 @@ namespace mobileshoppe
 
                     while (dr.Read())
                     {
-                        // Thêm giá trị từ cột "ModelNum" vào cboModNoMobile
-                        cboModNum.Items.Add(dr["ModelNum"]);
+                        // Thêm giá trị từ cột "ModelNumber" vào cboModNoMobile
+                        cboModNum.Items.Add(dr["ModelNumber"]);
                     }
                 }
             }
@@ -91,19 +91,19 @@ namespace mobileshoppe
             //    using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
             //    {
             //        conn.Open();
-            //        cmd = new SqlCommand("select * from mobile  ", conn); 
+            //        cmd = new SqlCommand("select * from tbl_Mobile  ", conn); 
             //        da = new SqlDataAdapter(cmd);
             //        ds = new DataSet();
-            //        da.Fill(ds, "mobile");//khoogn có tbl_Company thì k hiện đâu
+            //        da.Fill(ds, "tbl_Mobile");//khoogn có tbl_Company thì k hiện đâu
             //    }
-            //    cboIMIENum.DataSource = ds.Tables["mobile"];
+            //    cboIMIENum.DataSource = ds.Tables["tbl_Mobile"];
             //    cboIMIENum.DisplayMember = "IMEINO";
             //    cboIMIENum.ValueMember = "IMEINO";
 
             //}
             //catch (Exception ex)
             //{
-            //    MessageBox.Show("Error binding mobile names: " + ex.Message);
+            //    MessageBox.Show("Error binding tbl_Mobile names: " + ex.Message);
             //}
         }
 
@@ -114,8 +114,8 @@ namespace mobileshoppe
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
             {
                 conn.Open();
-                cmd = new SqlCommand("SELECT IMEINO from mobile  inner join tbl_Model on  mobile.modID = tbl_Model.ModID WHERE tbl_Model.ModelNum = @ModelNum", conn);
-                cmd.Parameters.AddWithValue("@ModelNum", cboModNum.Text);
+                cmd = new SqlCommand("SELECT IMEINO from tbl_Mobile  inner join tbl_Model on  tbl_Mobile.ModelID = tbl_Model.ModelID WHERE tbl_Model.ModelNumber = @ModelNumber", conn);
+                cmd.Parameters.AddWithValue("@ModelNumber", cboModNum.Text);
 
                 dr = cmd.ExecuteReader();
                 {
@@ -130,15 +130,15 @@ namespace mobileshoppe
         }
         private void btnSubmitSales_Click(object sender, EventArgs e)
         {
-            confirmDetails.CustName = txtCustName.Text;
+            confirmDetails.CustomerName = txtCustName.Text;
             confirmDetails.MobNum = txtMobNum.Text;
             confirmDetails.Address = txtaddress.Text;
             confirmDetails.email = txtEmailId.Text;
-            confirmDetails.compname = cboCompName.Text;
+            confirmDetails.CompanyName = cboCompName.Text;
             confirmDetails.modnum = cboModNum.Text;
             confirmDetails.IMEI = cboIMIENum.Text;
             confirmDetails.Price = txtPrice.Text;
-            //confirmDetails.CustName = Warranty.Text;
+            //confirmDetails.CustomerName = Warranty.Text;
             confirmDetails objdetails = new confirmDetails();
             objdetails.Show() ;
             this.Hide();
@@ -154,8 +154,8 @@ namespace mobileshoppe
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
             {
                 conn.Open();
-                cmd = new SqlCommand("SELECT tbl_Model.ModelNum FROM tbl_Model INNER JOIN tbl_Company ON tbl_Model.compID = tbl_Company.compID WHERE tbl_Company.compName = @compName;", conn);
-                cmd.Parameters.AddWithValue("@compName", cboCompNameVS.Text);
+                cmd = new SqlCommand("SELECT tbl_Model.ModelNumber FROM tbl_Model INNER JOIN tbl_Company ON tbl_Model.CompanyID = tbl_Company.CompanyID WHERE tbl_Company.CompanyName = @CompanyName;", conn);
+                cmd.Parameters.AddWithValue("@CompanyName", cboCompNameVS.Text);
 
                 dr = cmd.ExecuteReader();
                 {
@@ -164,8 +164,8 @@ namespace mobileshoppe
 
                     while (dr.Read())
                     {
-                        // Thêm giá trị từ cột "ModelNum" vào cboModNoMobile
-                        cboModNumVS.Items.Add(dr["ModelNum"]);
+                        // Thêm giá trị từ cột "ModelNumber" vào cboModNoMobile
+                        cboModNumVS.Items.Add(dr["ModelNumber"]);
                     }
                    
                 }
@@ -183,7 +183,7 @@ namespace mobileshoppe
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
             {
                 conn.Open();
-                cmd = new SqlCommand("select c1.custName, c1.MobileNo, c1.mailId, c1.Address from tbl_Sales s1 inner join tbl_Customer c1 on s1.custID = c1.custID where s1.IMEINO = @IMEINO", conn);
+                cmd = new SqlCommand("select c1.CustomerName, c1.MobileNumber, c1.EmailID, c1.Address from tbl_Sales s1 inner join tbl_Customer c1 on s1.CustomerID = c1.CustomerID where s1.IMEINO = @IMEINO", conn);
                 cmd.Parameters.AddWithValue("@IMEINO", IMEI);
                 // Sử dụng SqlDataAdapter và DataTable để đổ dữ liệu
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);

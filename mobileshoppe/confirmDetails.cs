@@ -16,11 +16,11 @@ namespace mobileshoppe
 {
     public partial class confirmDetails : Form
     {
-        public static string CustName = string.Empty;
+        public static string CustomerName = string.Empty;
         public static string MobNum = string.Empty;
         public static string Address = string.Empty;
         public static string email = string.Empty;
-        public static string compname = string.Empty;
+        public static string CompanyName = string.Empty;
         public static string modnum = string.Empty;
         public static string IMEI = string.Empty;
         public static string Price = string.Empty;
@@ -29,13 +29,13 @@ namespace mobileshoppe
         public confirmDetails()
         {
             InitializeComponent();
-            if (!string.IsNullOrEmpty(CustName))
+            if (!string.IsNullOrEmpty(CustomerName))
             {
-                this.lblcustname.Text = CustName;
+                this.lblcustname.Text = CustomerName;
                 //  this.lblmobnum.Text = MobNum;
                 // this.lbladdress.Text = Address;
                 // this.lblemail.Text = email;
-                //this.lblcompname.Text = compname;
+                //this.lblcompname.Text = CompanyName;
                 //this.lblmodnum.Text = modnum;
                 //this.lblIMEI.Text = IMEI;
                 //this.lblprice.Text = Price;
@@ -53,9 +53,9 @@ namespace mobileshoppe
             {
                 this.lblemail.Text = email;
             }
-            if (!string.IsNullOrEmpty(compname))
+            if (!string.IsNullOrEmpty(CompanyName))
             {
-                this.lblcompname.Text = compname;
+                this.lblcompname.Text = CompanyName;
             }
             if (!string.IsNullOrEmpty(modnum))
             {
@@ -73,7 +73,7 @@ namespace mobileshoppe
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
             {
                 conn.Open();
-                using (SqlCommand cmd = new SqlCommand("Select warranty from tbl_Mobile where IMEINO = @IMEINO ", conn))
+                using (SqlCommand cmd = new SqlCommand("Select Warranty from tbl_Mobile where IMEINO = @IMEINO ", conn))
                 {
                     cmd.Parameters.AddWithValue("@IMEINO", IMEI);
                     cmd.ExecuteNonQuery();
@@ -93,7 +93,7 @@ namespace mobileshoppe
 
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(custID),0) from tbl_Customer", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(CustomerID),0) from tbl_Customer", conn);
                     int i = (Convert.ToInt32(cmd.ExecuteScalar()));
                     i++; 
                     return i;
@@ -114,7 +114,7 @@ namespace mobileshoppe
 
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(salesID),0) from tbl_Sales", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(SalesID),0) from tbl_Sales", conn);
                     int i = (Convert.ToInt32(cmd.ExecuteScalar()));
                     i++;
                     return i;
@@ -140,40 +140,40 @@ namespace mobileshoppe
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
             {
                 conn.Open();
-                int custID = AutoCustomerID();
-                int salesID = autoSalesID();
-                using (SqlCommand cmd = new SqlCommand("insert into tbl_Customer values(@custID, @custName, @MobileNo, @mailId, @Address)", conn))
+                int CustomerID = AutoCustomerID();
+                int SalesID = autoSalesID();
+                using (SqlCommand cmd = new SqlCommand("insert into tbl_Customer values(@CustomerID, @CustomerName, @MobileNumber, @EmailID, @Address)", conn))
                 {
-                    cmd.Parameters.AddWithValue("@custID", custID);
-                    cmd.Parameters.AddWithValue("@custName", CustName);
-                    cmd.Parameters.AddWithValue("@MobileNo", MobNum);
-                    cmd.Parameters.AddWithValue("@mailId", email);
+                    cmd.Parameters.AddWithValue("@CustomerID", CustomerID);
+                    cmd.Parameters.AddWithValue("@CustomerName", CustomerName);
+                    cmd.Parameters.AddWithValue("@MobileNumber", MobNum);
+                    cmd.Parameters.AddWithValue("@EmailID", email);
                     cmd.Parameters.AddWithValue("@Address", Address);
                     cmd.ExecuteNonQuery();
-                    using (SqlCommand cmdSales = new SqlCommand("insert into tbl_Sales values(@salesID, @IMEINO, GETDATE(), @price, @custID)", conn))
+                    using (SqlCommand cmdSales = new SqlCommand("insert into tbl_Sales values(@SalesID, @IMEINO, GETDATE(), @Price, @CustomerID)", conn))
                     {
-                        cmdSales.Parameters.AddWithValue("@salesID", salesID);
+                        cmdSales.Parameters.AddWithValue("@SalesID", SalesID);
                         cmdSales.Parameters.AddWithValue("@IMEINO", IMEI);
-                        cmdSales.Parameters.AddWithValue("@price", Price);
-                        cmdSales.Parameters.AddWithValue("@custID", custID);
+                        cmdSales.Parameters.AddWithValue("@Price", Price);
+                        cmdSales.Parameters.AddWithValue("@CustomerID", CustomerID);
                         cmdSales.ExecuteNonQuery();
                         using ( SqlCommand cmdmobile = new SqlCommand("update tbl_Mobile set status = 'Sold' where IMEINO = @IMEINO",conn))
                         {
                             cmdmobile.Parameters.AddWithValue("@IMEINO", IMEI);
                             cmdmobile.ExecuteNonQuery();
-                            using (SqlCommand cmdGetModId = new SqlCommand("SELECT ModID FROM tbl_Model WHERE ModelNum = @modNum", conn))
+                            using (SqlCommand cmdGetModId = new SqlCommand("SELECT ModelID FROM tbl_Model WHERE ModelNumber = @ModelNumber", conn))
                             {
-                                cmdGetModId.Parameters.AddWithValue("@modNum", lblmodnum.Text);
-                                int modID = Convert.ToInt32(cmdGetModId.ExecuteScalar());
+                                cmdGetModId.Parameters.AddWithValue("@ModelNumber", lblmodnum.Text);
+                                int ModelID = Convert.ToInt32(cmdGetModId.ExecuteScalar());
 
-                                using (SqlCommand cmdGetQty = new SqlCommand("SELECT AvailableQty FROM tbl_Model WHERE ModelNum = @modNum", conn))
+                                using (SqlCommand cmdGetQty = new SqlCommand("SELECT AvailableQty FROM tbl_Model WHERE ModelNumber = @ModelNumber", conn))
                                 {
-                                    cmdGetQty.Parameters.AddWithValue("@modNum", lblmodnum.Text);
+                                    cmdGetQty.Parameters.AddWithValue("@ModelNumber", lblmodnum.Text);
                                     int Aquantity = Convert.ToInt32(cmdGetQty.ExecuteScalar());
-                                    using (SqlCommand cmdmodel = new SqlCommand("update tbl_Model set AvailableQty =  @Aquantity -1 where ModID = @modID ", conn))
+                                    using (SqlCommand cmdmodel = new SqlCommand("update tbl_Model set AvailableQty =  @Aquantity -1 where ModelID = @ModelID ", conn))
                                     {
                                         cmdmodel.Parameters.AddWithValue("@Aquantity", Aquantity);
-                                        cmdmodel.Parameters.AddWithValue("@modID", modID);
+                                        cmdmodel.Parameters.AddWithValue("@ModelID", ModelID);
                                         cmdmodel.ExecuteNonQuery();
                                     }
                                 }
