@@ -5,32 +5,32 @@ GO
 
 -- tbl_User
 CREATE TABLE tbl_User (
-    UserName VARCHAR(20) PRIMARY KEY,
-    PWD VARCHAR(20), -- Password
+    username VARCHAR(20) PRIMARY KEY,
+    pwd VARCHAR(20), -- Password
     EmployeeName VARCHAR(20),
     Address VARCHAR(MAX),
-    MobileNumber VARCHAR(20),
+    MobileNo VARCHAR(20),
     Hint VARCHAR(50)
 );
 
 -- tbl_Company
 CREATE TABLE tbl_Company (
-    ComId VARCHAR(20) PRIMARY KEY,
-    CName VARCHAR(20)
+    compID VARCHAR(20) PRIMARY KEY,
+    compname VARCHAR(20)
 );
 
 -- tbl_Model
 CREATE TABLE tbl_Model (
-    ModelId VARCHAR(20) PRIMARY KEY,
+    ModID VARCHAR(20) PRIMARY KEY,
     ComId VARCHAR(20),
-    ModelNum VARCHAR(20),
+    ModNum VARCHAR(20),
     AvailableQty INT,
     FOREIGN KEY (ComId) REFERENCES tbl_Company(ComId)
 );
 
 -- tbl_Transaction
 CREATE TABLE tbl_Transaction (
-    TransId VARCHAR(20) PRIMARY KEY,
+    TransID VARCHAR(20) PRIMARY KEY,
     ModelId VARCHAR(20),
     Quantity INT,
     Date DATE,
@@ -59,10 +59,10 @@ CREATE TABLE tbl_Customer (
 
 -- tbl_Sales
 CREATE TABLE tbl_Sales (
-    SlsId VARCHAR(20) PRIMARY KEY,
+    salesID VARCHAR(20) PRIMARY KEY,
     IMEINO VARCHAR(50),
     PurchageDate DATE,
-    Price MONEY,
+    price MONEY,
     CusId VARCHAR(20),
     FOREIGN KEY (IMEINO) REFERENCES tbl_Mobile(IMEINO),
     FOREIGN KEY (CusId) REFERENCES tbl_Customer(CusId)
