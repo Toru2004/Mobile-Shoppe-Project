@@ -134,142 +134,142 @@ GO
 -- EXEC sp_msforeachtable "ALTER TABLE ? WITH CHECK CHECK CONSTRAINT ALL";
 
 -- PROCEDURES
-CREATE PROCEDURE sp_Login
-    @UserName VARCHAR(20),
-    @PWD VARCHAR(20)
-AS
-BEGIN
-    SELECT * FROM tbl_User 
-    WHERE UserName = @UserName AND PWD = @PWD
-END
-GO
+-- CREATE PROCEDURE sp_Login
+--     @UserName VARCHAR(20),
+--     @PWD VARCHAR(20)
+-- AS
+-- BEGIN
+--     SELECT * FROM tbl_User 
+--     WHERE UserName = @UserName AND PWD = @PWD
+-- END
+-- GO
 
-CREATE PROCEDURE sp_AddCompany
-    @CompanyId VARCHAR(20),
-    @CName VARCHAR(20)
-AS
-BEGIN
-    INSERT INTO tbl_Company (CompanyId, CName)
-    VALUES (@CompanyId, @CName)
-END
-GO
+-- CREATE PROCEDURE sp_AddCompany
+--     @CompanyId VARCHAR(20),
+--     @CName VARCHAR(20)
+-- AS
+-- BEGIN
+--     INSERT INTO tbl_Company (CompanyId, CName)
+--     VALUES (@CompanyId, @CName)
+-- END
+-- GO
 
-CREATE PROCEDURE sp_AddModel
-    @ModelId VARCHAR(20),
-    @CompanyId VARCHAR(20),
-    @ModelNumber VARCHAR(20),
-    @AvailableQty INT
-AS
-BEGIN
-    INSERT INTO tbl_Model (ModelId, CompanyId, ModelNumber, AvailableQty)
-    VALUES (@ModelId, @CompanyId, @ModelNumber, @AvailableQty)
-END
-GO
+-- CREATE PROCEDURE sp_AddModel
+--     @ModelId VARCHAR(20),
+--     @CompanyId VARCHAR(20),
+--     @ModelNumber VARCHAR(20),
+--     @AvailableQty INT
+-- AS
+-- BEGIN
+--     INSERT INTO tbl_Model (ModelId, CompanyId, ModelNumber, AvailableQty)
+--     VALUES (@ModelId, @CompanyId, @ModelNumber, @AvailableQty)
+-- END
+-- GO
 
-CREATE PROCEDURE sp_AddMobile
-    @ModelId VARCHAR(20),
-    @IMEINO VARCHAR(50),
-    @Status VARCHAR(20),
-    @Warranty DATE,
-    @Price MONEY
-AS
-BEGIN
-    INSERT INTO tbl_Mobile (ModelId, IMEINO, Status, Warranty, Price)
-    VALUES (@ModelId, @IMEINO, @Status, @Warranty, @Price)
-END
-GO
+-- CREATE PROCEDURE sp_AddMobile
+--     @ModelId VARCHAR(20),
+--     @IMEINO VARCHAR(50),
+--     @Status VARCHAR(20),
+--     @Warranty DATE,
+--     @Price MONEY
+-- AS
+-- BEGIN
+--     INSERT INTO tbl_Mobile (ModelId, IMEINO, Status, Warranty, Price)
+--     VALUES (@ModelId, @IMEINO, @Status, @Warranty, @Price)
+-- END
+-- GO
 
-CREATE PROCEDURE sp_UpdateStock
-    @ModelId VARCHAR(20),
-    @Quantity INT
-AS
-BEGIN
-    UPDATE tbl_Model
-    SET AvailableQty = AvailableQty + @Quantity
-    WHERE ModelId = @ModelId
-END
-GO
+-- CREATE PROCEDURE sp_UpdateStock
+--     @ModelId VARCHAR(20),
+--     @Quantity INT
+-- AS
+-- BEGIN
+--     UPDATE tbl_Model
+--     SET AvailableQty = AvailableQty + @Quantity
+--     WHERE ModelId = @ModelId
+-- END
+-- GO
 
-CREATE PROCEDURE sp_SalesReport_ByDate
-    @Date DATE
-AS
-BEGIN
-    SELECT * FROM tbl_Sales
-    WHERE CONVERT(DATE, SalesDate) = @Date
-END
-GO
+-- CREATE PROCEDURE sp_SalesReport_ByDate
+--     @Date DATE
+-- AS
+-- BEGIN
+--     SELECT * FROM tbl_Sales
+--     WHERE CONVERT(DATE, SalesDate) = @Date
+-- END
+-- GO
 
-CREATE PROCEDURE sp_SalesReport_DateToDate
-    @FromDate DATE,
-    @ToDate DATE
-AS
-BEGIN
-    SELECT * FROM tbl_Sales
-    WHERE SalesDate BETWEEN @FromDate AND @ToDate
-END
-GO
+-- CREATE PROCEDURE sp_SalesReport_DateToDate
+--     @FromDate DATE,
+--     @ToDate DATE
+-- AS
+-- BEGIN
+--     SELECT * FROM tbl_Sales
+--     WHERE SalesDate BETWEEN @FromDate AND @ToDate
+-- END
+-- GO
 
-CREATE PROCEDURE sp_AddUser
-    @UserName VARCHAR(20),
-    @PWD VARCHAR(20),
-    @EmployeeName VARCHAR(20),
-    @Address VARCHAR(MAX),
-    @MobileNumber VARCHAR(20),
-    @Hint VARCHAR(50)
-AS
-BEGIN
-    INSERT INTO tbl_User (UserName, PWD, EmployeeName, Address, MobileNumber, Hint)
-    VALUES (@UserName, @PWD, @EmployeeName, @Address, @MobileNumber, @Hint)
-END
-GO
+-- CREATE PROCEDURE sp_AddUser
+--     @UserName VARCHAR(20),
+--     @PWD VARCHAR(20),
+--     @EmployeeName VARCHAR(20),
+--     @Address VARCHAR(MAX),
+--     @MobileNumber VARCHAR(20),
+--     @Hint VARCHAR(50)
+-- AS
+-- BEGIN
+--     INSERT INTO tbl_User (UserName, PWD, EmployeeName, Address, MobileNumber, Hint)
+--     VALUES (@UserName, @PWD, @EmployeeName, @Address, @MobileNumber, @Hint)
+-- END
+-- GO
 
-CREATE PROCEDURE sp_AddCustomer
-    @CustomerID VARCHAR(20),
-    @CustomerName VARCHAR(20),
-    @MobileNumber VARCHAR(20),
-    @EmailID VARCHAR(20),
-    @Address VARCHAR(MAX)
-AS
-BEGIN
-    INSERT INTO tbl_Customer (CustomerID, CustomerName, MobileNumber, EmailID, Address)
-    VALUES (@CustomerID, @CustomerName, @MobileNumber, @EmailID, @Address)
-END
-GO
+-- CREATE PROCEDURE sp_AddCustomer
+--     @CustomerID VARCHAR(20),
+--     @CustomerName VARCHAR(20),
+--     @MobileNumber VARCHAR(20),
+--     @EmailID VARCHAR(20),
+--     @Address VARCHAR(MAX)
+-- AS
+-- BEGIN
+--     INSERT INTO tbl_Customer (CustomerID, CustomerName, MobileNumber, EmailID, Address)
+--     VALUES (@CustomerID, @CustomerName, @MobileNumber, @EmailID, @Address)
+-- END
+-- GO
 
-CREATE PROCEDURE sp_SellMobile
-    @SlsId VARCHAR(20),
-    @IMEINO VARCHAR(50),
-    @SalesDate DATE,
-    @Price MONEY,
-    @CustomerID VARCHAR(20)
-AS
-BEGIN
-    INSERT INTO tbl_Sales (SlsId, IMEINO, SalesDate, Price, CustomerID)
-    VALUES (@SlsId, @IMEINO, @SalesDate, @Price, @CustomerID)
+-- CREATE PROCEDURE sp_SellMobile
+--     @SlsId VARCHAR(20),
+--     @IMEINO VARCHAR(50),
+--     @SalesDate DATE,
+--     @Price MONEY,
+--     @CustomerID VARCHAR(20)
+-- AS
+-- BEGIN
+--     INSERT INTO tbl_Sales (SlsId, IMEINO, SalesDate, Price, CustomerID)
+--     VALUES (@SlsId, @IMEINO, @SalesDate, @Price, @CustomerID)
 
-    -- Cập nhật trạng thái máy đã bán
-    UPDATE tbl_Mobile
-    SET Status = 'Sold'
-    WHERE IMEINO = @IMEINO
-END
-GO
+--     -- Cập nhật trạng thái máy đã bán
+--     UPDATE tbl_Mobile
+--     SET Status = 'Sold'
+--     WHERE IMEINO = @IMEINO
+-- END
+-- GO
 
-CREATE PROCEDURE sp_ViewStock
-AS
-BEGIN
-    SELECT m.ModelId, m.ModelNumber, c.CName, m.AvailableQty
-    FROM tbl_Model m
-    INNER JOIN tbl_Company c ON m.CompanyId = c.CompanyId
-END
-GO
+-- CREATE PROCEDURE sp_ViewStock
+-- AS
+-- BEGIN
+--     SELECT m.ModelId, m.ModelNumber, c.CName, m.AvailableQty
+--     FROM tbl_Model m
+--     INNER JOIN tbl_Company c ON m.CompanyId = c.CompanyId
+-- END
+-- GO
 
-CREATE PROCEDURE sp_SearchCustomerByIMEI
-    @IMEINO VARCHAR(50)
-AS
-BEGIN
-    SELECT c.*
-    FROM tbl_Customer c
-    INNER JOIN tbl_Sales s ON c.CustomerID = s.CustomerID
-    WHERE s.IMEINO = @IMEINO
-END
-GO
+-- CREATE PROCEDURE sp_SearchCustomerByIMEI
+--     @IMEINO VARCHAR(50)
+-- AS
+-- BEGIN
+--     SELECT c.*
+--     FROM tbl_Customer c
+--     INNER JOIN tbl_Sales s ON c.CustomerID = s.CustomerID
+--     WHERE s.IMEINO = @IMEINO
+-- END
+-- GO

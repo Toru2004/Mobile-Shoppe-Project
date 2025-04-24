@@ -31,7 +31,9 @@ namespace mobileshoppe
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            if (txtUid.Text == "admin" && txtPwd.Text == "admin")
+            string Username = txtUid.Text;
+            string Pwd = txtPwd.Text;
+            if (Username == "admin" && Pwd == "admin")
             {
                 adminHomepage objAdminHome = new adminHomepage();
                 objAdminHome.Show();

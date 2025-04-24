@@ -37,9 +37,18 @@ namespace mobileshoppe
                 {
                     conn.Open();
                     cmd = new SqlCommand("SELECT ISNULL(MAX(CompanyID),0) from tbl_Company", conn);
-                    int i = (Convert.ToInt32(cmd.ExecuteScalar()));
-                    i++;
-                    txtCompID.Text = i.ToString();
+                    object result = cmd.ExecuteScalar();
+                    int i = 0;
+                    if (result != DBNull.Value && result != null && int.TryParse(result.ToString(), out i))
+                    {
+                        i++;
+                        txtCompID.Text = i.ToString();
+                    }
+                    else
+                    {
+                        txtCompID.Text = "";
+                    }
+
 
 
                 }
@@ -60,9 +69,18 @@ namespace mobileshoppe
                 {
                     conn.Open();
                     cmd = new SqlCommand("SELECT ISNULL(MAX(ModelID),0) from tbl_Model", conn);
-                    int i = (Convert.ToInt32(cmd.ExecuteScalar()));
-                    i++;
-                    txtModID.Text = i.ToString();
+                    object result = cmd.ExecuteScalar();
+                    int i = 0;
+                    if (result != DBNull.Value && result != null && int.TryParse(result.ToString(), out i))
+                    {
+                        i++;
+                        txtModID.Text = i.ToString();
+                    }
+                    else
+                    {
+                        txtModID.Text = "";
+                    }
+
 
 
                 }
@@ -83,11 +101,17 @@ namespace mobileshoppe
                 {
                     conn.Open();
                     cmd = new SqlCommand("SELECT ISNULL(MAX(TransactionID),0) from tbl_Transaction", conn);
-                    int i = (Convert.ToInt32(cmd.ExecuteScalar()));
-                    i++;
-                    txtTransID.Text = i.ToString();
-
-
+                    object result = cmd.ExecuteScalar();
+                    int i = 0;
+                    if (result != DBNull.Value && result != null && int.TryParse(result.ToString(), out i))
+                    {
+                        i++;
+                        txtTransID.Text = i.ToString();
+                    }
+                    else
+                    {
+                        txtTransID.Text = "";
+                    }
                 }
             }
             catch (Exception ex)
