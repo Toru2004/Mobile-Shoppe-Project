@@ -64,8 +64,6 @@ namespace mobileshoppe
             try
             {
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
-
-
                 {
                     conn.Open();
                     cmd = new SqlCommand("SELECT ISNULL(MAX(ModelID),0) from tbl_Model", conn);
@@ -80,9 +78,6 @@ namespace mobileshoppe
                     {
                         txtModID.Text = "";
                     }
-
-
-
                 }
             }
             catch (Exception ex)
