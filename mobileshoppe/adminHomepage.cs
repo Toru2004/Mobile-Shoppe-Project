@@ -36,18 +36,24 @@ namespace mobileshoppe
 
                 {
                     conn.Open();
-                    cmd = new SqlCommand("SELECT ISNULL(MAX(CompanyID),0) from tbl_Company", conn);
+                    cmd = new SqlCommand("SELECT ISNULL(MAX(CompanyID), 'C000') FROM tbl_Company", conn);
                     object result = cmd.ExecuteScalar();
-                    int i = 0;
-                    if (result != DBNull.Value && result != null && int.TryParse(result.ToString(), out i))
+                    string newId = "";
+
+                    if (result != null)
                     {
-                        i++;
-                        txtCompID.Text = i.ToString();
+                        string maxId = result.ToString();
+
+                        string numberPart = maxId.Substring(1);
+
+                        if (int.TryParse(numberPart, out int number))
+                        {
+                            number++;
+                            newId = "C" + number.ToString("D3");
+                        }
                     }
-                    else
-                    {
-                        txtCompID.Text = "";
-                    }
+
+                    txtCompID.Text = newId;
 
 
 
@@ -66,18 +72,24 @@ namespace mobileshoppe
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
                 {
                     conn.Open();
-                    cmd = new SqlCommand("SELECT ISNULL(MAX(ModelID),0) from tbl_Model", conn);
+                    cmd = new SqlCommand("SELECT ISNULL(MAX(ModelID),'M000') from tbl_Model", conn);
                     object result = cmd.ExecuteScalar();
-                    int i = 0;
-                    if (result != DBNull.Value && result != null && int.TryParse(result.ToString(), out i))
+                    string newModelId = "";
+
+                    if (result != null)
                     {
-                        i++;
-                        txtModID.Text = i.ToString();
+                        string maxId = result.ToString();
+
+                        string numberPart = maxId.Substring(1);
+
+                        if (int.TryParse(numberPart, out int number))
+                        {
+                            number++;
+                            newModelId = "M" + number.ToString("D3");
+                        }
                     }
-                    else
-                    {
-                        txtModID.Text = "";
-                    }
+
+                    txtModID.Text = newModelId;
                 }
             }
             catch (Exception ex)
@@ -95,18 +107,25 @@ namespace mobileshoppe
 
                 {
                     conn.Open();
-                    cmd = new SqlCommand("SELECT ISNULL(MAX(TransactionID),0) from tbl_Transaction", conn);
+                    cmd = new SqlCommand("SELECT ISNULL(MAX(TransactionID), 'T000') FROM tbl_Transaction", conn);
                     object result = cmd.ExecuteScalar();
-                    int i = 0;
-                    if (result != DBNull.Value && result != null && int.TryParse(result.ToString(), out i))
+                    string newTransId = "";
+
+                    if (result != null)
                     {
-                        i++;
-                        txtTransID.Text = i.ToString();
+                        string maxId = result.ToString();
+
+                        string numberPart = maxId.Substring(1);
+
+                        if (int.TryParse(numberPart, out int number))
+                        {
+                            number++;
+                            newTransId = "T" + number.ToString("D3");
+                        }
                     }
-                    else
-                    {
-                        txtTransID.Text = "";
-                    }
+
+                    txtTransID.Text = newTransId;
+
                 }
             }
             catch (Exception ex)
@@ -134,7 +153,7 @@ namespace mobileshoppe
             try
             {
 
-                int CompanyID = int.Parse(txtCompID.Text);
+                string CompanyID = txtCompID.Text;
                 string CompanyName = txtCompName.Text;
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
                 {
@@ -160,7 +179,7 @@ namespace mobileshoppe
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            int transID = int.Parse(txtTransID.Text);
+            string transID = txtTransID.Text;
             //int ModelID = Convert.ToInt32(cboModNo.SelectedValue);
             decimal amount = decimal.Parse(txtAmount.Text); // Chuyển đổi giá trị từ string sang decimal
             int Aquantity = int.Parse(txtQuantity.Text);
@@ -249,8 +268,8 @@ namespace mobileshoppe
         }
         private void btnAddMod_Click(object sender, EventArgs e)
         {
-            int ModelID = int.Parse(txtModID.Text);
-            int CompanyID = Convert.ToInt32(cboCompNameMod.SelectedValue);
+            string ModelID = txtModID.Text;
+            string CompanyID = cboCompNameMod.SelectedValue.ToString();
             string ModelNumber = txtNum.Text;// tài liệu lúc string lúc int
             int AvailableQty;
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
@@ -331,7 +350,7 @@ namespace mobileshoppe
                 using (SqlCommand getModIdCmd = new SqlCommand("SELECT ModelID FROM tbl_Model WHERE ModelNumber = @ModelNumber", conn))
                 {
                     getModIdCmd.Parameters.AddWithValue("@ModelNumber", cboModNoMobile.Text.Trim());
-                    int ModelID = Convert.ToInt32(getModIdCmd.ExecuteScalar());
+                    string ModelID = getModIdCmd.ExecuteScalar().ToString();
 
                     cmd = new SqlCommand("Insert into tbl_Mobile values(@IMEINO, @ModelID, 'Not Sold', @Price, @Warranty) ", conn);
                     cmd.Parameters.AddWithValue("@IMEINO", IMEINO);

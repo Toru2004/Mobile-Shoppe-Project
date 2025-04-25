@@ -84,7 +84,7 @@ namespace mobileshoppe
             }
         }
 
-         private string AutoCustomerID()
+         private string autoCustomerID()
         {
             try
             {
@@ -148,10 +148,10 @@ namespace mobileshoppe
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
             {
                 conn.Open();
-                string CustomerID = AutoCustomerID();
+                string CustomerID = autoCustomerID();
                 string SalesID = autoSalesID();
                 using (SqlCommand cmd = new SqlCommand("insert into tbl_Customer values(@CustomerID, @CustomerName, @MobileNumber, @EmailID, @Address)", conn))
-                {
+                {   
                     cmd.Parameters.AddWithValue("@CustomerID", CustomerID);
                     cmd.Parameters.AddWithValue("@CustomerName", CustomerName);
                     cmd.Parameters.AddWithValue("@MobileNumber", MobNum);
