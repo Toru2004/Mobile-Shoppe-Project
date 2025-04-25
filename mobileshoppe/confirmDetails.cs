@@ -84,46 +84,54 @@ namespace mobileshoppe
             }
         }
 
-         private int AutoCustomerID()
+         private string AutoCustomerID()
         {
             try
             {
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
-
-
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(CustomerID),0) from tbl_Customer", conn);
-                    int i = (Convert.ToInt32(cmd.ExecuteScalar()));
-                    i++; 
-                    return i;
+                    SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(CustomerID),'CU000') from tbl_Customer", conn);
+                    string maxCustomerId = cmd.ExecuteScalar().ToString();
+
+                    int numberPart = int.Parse(maxCustomerId.Substring(2));
+
+                    numberPart++;
+
+                    string newCustomerId = "CU" + numberPart.ToString("D3");
+
+                    return newCustomerId;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error retrieving ID: " + ex.Message); return 0;
+                MessageBox.Show("Error retrieving ID: " + ex.Message); return "CU000";
             }
 
         }
-        private int autoSalesID()
+        private string autoSalesID()
         {
             try
             {
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
-
-
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(SalesID),0) from tbl_Sales", conn);
-                    int i = (Convert.ToInt32(cmd.ExecuteScalar()));
-                    i++;
-                    return i;
+                    SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(SalesID),'S000') from tbl_Sales", conn);
+                    string maxSalesId = cmd.ExecuteScalar().ToString();
+
+                    int numberPart = int.Parse(maxSalesId.Substring(1));
+
+                    numberPart++;
+
+                    string newSalesId = "S" + numberPart.ToString("D3");
+
+                    return newSalesId;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error retrieving ID: " + ex.Message);
-                return 0;
+                return "S000";
             }
 
         }
@@ -140,8 +148,8 @@ namespace mobileshoppe
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
             {
                 conn.Open();
-                int CustomerID = AutoCustomerID();
-                int SalesID = autoSalesID();
+                string CustomerID = AutoCustomerID();
+                string SalesID = autoSalesID();
                 using (SqlCommand cmd = new SqlCommand("insert into tbl_Customer values(@CustomerID, @CustomerName, @MobileNumber, @EmailID, @Address)", conn))
                 {
                     cmd.Parameters.AddWithValue("@CustomerID", CustomerID);
@@ -164,7 +172,7 @@ namespace mobileshoppe
                             using (SqlCommand cmdGetModId = new SqlCommand("SELECT ModelID FROM tbl_Model WHERE ModelNumber = @ModelNumber", conn))
                             {
                                 cmdGetModId.Parameters.AddWithValue("@ModelNumber", lblmodnum.Text);
-                                int ModelID = Convert.ToInt32(cmdGetModId.ExecuteScalar());
+                                string ModelID = Convert.ToString(cmdGetModId.ExecuteScalar());
 
                                 using (SqlCommand cmdGetQty = new SqlCommand("SELECT AvailableQty FROM tbl_Model WHERE ModelNumber = @ModelNumber", conn))
                                 {
