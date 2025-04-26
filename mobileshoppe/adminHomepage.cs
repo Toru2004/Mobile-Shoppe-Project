@@ -432,9 +432,9 @@ namespace mobileshoppe
                 cboModNoMobile.DisplayMember = "ModelNumber";
                 cboModNoMobile.ValueMember = "ModelID";
 
-                cboModPrice.DataSource = ds.Tables["tbl_Model"];
-                cboModPrice.DisplayMember = "ModelNumber";
-                cboModPrice.ValueMember = "ModelID";
+                cboModUpdPrice.DataSource = ds.Tables["tbl_Model"];
+                cboModUpdPrice.DisplayMember = "ModelNumber";
+                cboModUpdPrice.ValueMember = "ModelID";
 
             }
             catch (Exception ex)
@@ -804,14 +804,14 @@ namespace mobileshoppe
             try
             {
                 // Kiểm tra xem có model nào được chọn không
-                if (cboModPrice.SelectedItem == null || string.IsNullOrEmpty(cboModPrice.Text))
+                if (cboModUpdPrice.SelectedItem == null || string.IsNullOrEmpty(cboModUpdPrice.Text))
                 {
-                    cboIMEINo.DataSource = null;
-                    cboIMEINo.Items.Clear();
+                    cboIMEINoUpdPrice.DataSource = null;
+                    cboIMEINoUpdPrice.Items.Clear();
                     return;
                 }
 
-                string modelNumber = cboModPrice.Text;
+                string modelNumber = cboModUpdPrice.Text;
 
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
                 {
@@ -834,11 +834,9 @@ namespace mobileshoppe
                     }
 
                     // Cập nhật DataSource cho combobox IMEI
-                    cboIMEINo.DataSource = dt;
-                    cboIMEINo.DisplayMember = "IMEINO";
-                    cboIMEINo.ValueMember = "IMEINO";
-                    cboIMEINo.SelectedIndex = -1;
-                    cboIMEINo.Text = "";
+                    cboIMEINoUpdPrice.DataSource = dt;
+                    cboIMEINoUpdPrice.DisplayMember = "IMEINO";
+                    cboIMEINoUpdPrice.ValueMember = "IMEINO";
                 }
             }
             catch (Exception ex)
@@ -848,6 +846,8 @@ namespace mobileshoppe
                                MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
             }
+            cboIMEINoUpdPrice.SelectedIndex = -1;
+            cboIMEINoUpdPrice.Text = "";
         }
 
         private void cboCompNamePrice_SelectedIndexChanged(object sender, EventArgs e)
@@ -860,20 +860,22 @@ namespace mobileshoppe
 
                 dr = cmd.ExecuteReader();
                 {
-                    cboModPrice.Items.Clear();
+                    cboModUpdPrice.Items.Clear();
 
                     while (dr.Read())
                     {
-                        cboModPrice.Items.Add(dr["ModelNumber"]);
+                        cboModUpdPrice.Items.Add(dr["ModelNumber"]);
                     }
                 }
             }
+            cboModUpdPrice.SelectedIndex = -1;
+            cboModUpdPrice.Text = "";
         }
 
         private void btnUpdatePrice_Click(object sender, EventArgs e)
         {
             // Kiểm tra các điều kiện trước khi cập nhật
-            if (cboIMEINo.SelectedItem == null || string.IsNullOrEmpty(cboIMEINo.Text))
+            if (cboIMEINoUpdPrice.SelectedItem == null || string.IsNullOrEmpty(cboIMEINoUpdPrice.Text))
             {
                 MessageBox.Show("Vui lòng chọn IMEI Number", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -899,7 +901,7 @@ namespace mobileshoppe
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@Price", price);
-                        cmd.Parameters.AddWithValue("@IMEINO", cboIMEINo.Text);
+                        cmd.Parameters.AddWithValue("@IMEINO", cboIMEINoUpdPrice.Text);
 
                         int rowsAffected = cmd.ExecuteNonQuery();
 
