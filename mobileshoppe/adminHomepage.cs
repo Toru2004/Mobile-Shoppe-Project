@@ -134,6 +134,40 @@ namespace mobileshoppe
             }
 
         }
+        void autoIMEINo()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
+
+
+                {
+                    conn.Open();
+                    cmd = new SqlCommand("SELECT ISNULL(MAX(IMEINO), '0') FROM tbl_Mobile", conn);
+                    object result = cmd.ExecuteScalar();
+                    string newIMEINo = "";
+
+                    if (result != null)
+                    {
+                        string maxIMEINo = result.ToString();
+
+                        if (int.TryParse(maxIMEINo, out int number))
+                        {
+                            number++;
+                            newIMEINo = number.ToString();
+                        }
+                    }
+
+                    txtIMEINo.Text = newIMEINo;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error retrieving ID: " + ex.Message);
+            }
+
+        }
         public adminHomepage()
         {
             InitializeComponent();
@@ -145,6 +179,7 @@ namespace mobileshoppe
             autoGenid();
             autoModId();
             autoTransId();
+            autoIMEINo();
             BindingCompanyName();
         }
 
@@ -363,7 +398,7 @@ namespace mobileshoppe
 
                     MessageBox.Show("Cập nhật thành công", "Thông Báo!");
 
-                    autoTransId();
+                    autoIMEINo();
                     txtIMEINo.Clear();
                     txtPrice.Clear();
                 }
