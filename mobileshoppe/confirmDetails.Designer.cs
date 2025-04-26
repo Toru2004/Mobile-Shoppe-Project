@@ -186,12 +186,12 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(370, 315);
+            this.label13.Location = new System.Drawing.Point(300, 315);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(82, 20);
+            this.label13.Size = new System.Drawing.Size(189, 25);
             this.label13.TabIndex = 12;
-            this.label13.Text = "Warranty:";
+            this.label13.Text = "Warranty end date:";
             // 
             // lblcompname
             // 

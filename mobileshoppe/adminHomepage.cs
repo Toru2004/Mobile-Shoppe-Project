@@ -249,6 +249,7 @@ namespace mobileshoppe
             autoModId();
             autoTransId();
             autoIMEINo();
+            LoadWarrantyDates();
             BindingCompanyName();
             //BindingModelNumber();
         }
@@ -389,18 +390,26 @@ namespace mobileshoppe
                 cboCompNameMod.DataSource = ds.Tables["tbl_Company"];
                 cboCompNameMod.DisplayMember = "CompanyName";
                 cboCompNameMod.ValueMember = "CompanyID";
+                cboCompNameMod.SelectedIndex = -1;  // Reset không chọn gì hết
+                cboCompNameMod.Text = "";
 
                 cboCompNameMobile.DataSource = ds.Tables["tbl_Company"];
                 cboCompNameMobile.DisplayMember = "CompanyName";
                 cboCompNameMobile.ValueMember = "CompanyID";
+                cboCompNameMobile.SelectedIndex = -1;  // Reset không chọn gì hết
+                cboCompNameMobile.Text = "";
 
                 cboCompNameUp.DataSource = ds.Tables["tbl_Company"];
                 cboCompNameUp.DisplayMember = "CompanyName";
                 cboCompNameUp.ValueMember = "CompanyID";
+                cboCompNameUp.SelectedIndex = -1;  // Reset không chọn gì hết
+                cboCompNameUp.Text = "";
 
                 cboCompNamePrice.DataSource = ds.Tables["tbl_Company"];
                 cboCompNamePrice.DisplayMember = "CompanyName";
                 cboCompNamePrice.ValueMember = "CompanyID";
+                cboCompNamePrice.SelectedIndex = -1;  // Reset không chọn gì hết
+                cboCompNamePrice.Text = "";
             }
             catch (Exception ex)
             {
@@ -515,7 +524,9 @@ namespace mobileshoppe
                     cboModNoMobile.ValueMember = "ModelNumber";
 
                     // Thêm dòng này để làm mới combobox
-                    cboModNoMobile.Refresh();
+                    //cboModNoMobile.Refresh();
+                    cboModNoMobile.SelectedIndex = -1;  // Reset không chọn gì hết
+                    cboModNoMobile.Text = "";
                 }
             }
             catch (Exception ex)
@@ -536,6 +547,8 @@ namespace mobileshoppe
                 {
                     // Xóa các mục hiện tại trong cboModNoMobile trước khi thêm mới
                     cboModNo.Items.Clear();
+                    cboModNo.SelectedIndex = -1;  // Reset không chọn gì hết
+                    cboModNo.Text = "";
 
                     while (dr.Read())
                     {
@@ -605,7 +618,7 @@ namespace mobileshoppe
                         cmd.Parameters.AddWithValue("@IMEI", imei);
                         cmd.Parameters.AddWithValue("@ModelID", modelId);
                         cmd.Parameters.AddWithValue("@Price", price);
-                        cmd.Parameters.AddWithValue("@Warranty", dtpWarr.Value);
+                        cmd.Parameters.AddWithValue("@Warranty", Convert.ToInt32(cboWarrMobile.SelectedValue));
 
                         cmd.ExecuteNonQuery();
                     }
@@ -759,9 +772,31 @@ namespace mobileshoppe
             }
         }
 
-        private void dtpWarr_ValueChanged(object sender, EventArgs e)
+        public class ComboItem
         {
+            public string Text { get; set; }
+            public int Value { get; set; }
 
+            public override string ToString()
+            {
+                return Text;
+            }
+        }
+
+        // Hàm để tự động load dữ liệu vào ComboBox
+        void LoadWarrantyDates()
+        {
+            List<ComboItem> warrDates = new List<ComboItem>
+            {
+                new ComboItem { Text = "One Year", Value = 1 },
+                new ComboItem { Text = "Two Years", Value = 2 },
+                new ComboItem { Text = "Three Years", Value = 3 },
+                new ComboItem { Text = "Four Years", Value = 4 }
+            };
+
+            cboWarrMobile.DataSource = warrDates;
+            cboWarrMobile.DisplayMember = "Text";   // Hiển thị Text
+            cboWarrMobile.ValueMember = "Value";    // Lấy Value
         }
 
         private void cboModPrice_SelectedIndexChanged(object sender, EventArgs e)
@@ -802,6 +837,8 @@ namespace mobileshoppe
                     cboIMEINo.DataSource = dt;
                     cboIMEINo.DisplayMember = "IMEINO";
                     cboIMEINo.ValueMember = "IMEINO";
+                    cboIMEINo.SelectedIndex = -1;
+                    cboIMEINo.Text = "";
                 }
             }
             catch (Exception ex)

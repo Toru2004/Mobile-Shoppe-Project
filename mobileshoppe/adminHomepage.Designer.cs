@@ -46,9 +46,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.cboWarrDate = new System.Windows.Forms.ComboBox();
+            this.cboWarrMobile = new System.Windows.Forms.ComboBox();
             this.btnAddMobile = new System.Windows.Forms.Button();
-            this.dtpWarr = new System.Windows.Forms.DateTimePicker();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtIMEINo = new System.Windows.Forms.TextBox();
             this.cboModNoMobile = new System.Windows.Forms.ComboBox();
@@ -323,9 +322,8 @@
             // 
             // tabPage7
             // 
-            this.tabPage7.Controls.Add(this.cboWarrDate);
+            this.tabPage7.Controls.Add(this.cboWarrMobile);
             this.tabPage7.Controls.Add(this.btnAddMobile);
-            this.tabPage7.Controls.Add(this.dtpWarr);
             this.tabPage7.Controls.Add(this.txtPrice);
             this.tabPage7.Controls.Add(this.txtIMEINo);
             this.tabPage7.Controls.Add(this.cboModNoMobile);
@@ -343,13 +341,13 @@
             this.tabPage7.Text = "Mobile";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // cboWarrDate
+            // cboWarrMobile
             // 
-            this.cboWarrDate.FormattingEnabled = true;
-            this.cboWarrDate.Location = new System.Drawing.Point(240, 379);
-            this.cboWarrDate.Name = "cboWarrDate";
-            this.cboWarrDate.Size = new System.Drawing.Size(219, 29);
-            this.cboWarrDate.TabIndex = 11;
+            this.cboWarrMobile.FormattingEnabled = true;
+            this.cboWarrMobile.Location = new System.Drawing.Point(240, 223);
+            this.cboWarrMobile.Name = "cboWarrMobile";
+            this.cboWarrMobile.Size = new System.Drawing.Size(219, 29);
+            this.cboWarrMobile.TabIndex = 11;
             // 
             // btnAddMobile
             // 
@@ -362,16 +360,6 @@
             this.btnAddMobile.Text = "INSERT";
             this.btnAddMobile.UseVisualStyleBackColor = true;
             this.btnAddMobile.Click += new System.EventHandler(this.btnAddMobile_Click);
-            // 
-            // dtpWarr
-            // 
-            this.dtpWarr.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpWarr.Location = new System.Drawing.Point(240, 223);
-            this.dtpWarr.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpWarr.Name = "dtpWarr";
-            this.dtpWarr.Size = new System.Drawing.Size(367, 28);
-            this.dtpWarr.TabIndex = 9;
-            this.dtpWarr.ValueChanged += new System.EventHandler(this.dtpWarr_ValueChanged);
             // 
             // txtPrice
             // 
@@ -418,9 +406,9 @@
             this.label15.Location = new System.Drawing.Point(83, 223);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(129, 23);
+            this.label15.Size = new System.Drawing.Size(86, 23);
             this.label15.TabIndex = 4;
-            this.label15.Text = "Warranty Date:";
+            this.label15.Text = "Warranty:";
             // 
             // label14
             // 
@@ -1111,7 +1099,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dtpWarr;
         private System.Windows.Forms.TabControl tabControl3;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.DataGridView dgSaleReportDay;
@@ -1143,7 +1130,7 @@
         private System.Windows.Forms.Button btnAddMod;
         private System.Windows.Forms.Button btnAddMobile;
         private System.Windows.Forms.Label lblLogout;
-        private System.Windows.Forms.ComboBox cboWarrDate;
+        private System.Windows.Forms.ComboBox cboWarrMobile;
         private System.Windows.Forms.TabPage tabPage10;
         private System.Windows.Forms.Button btnUpdatePrice;
         private System.Windows.Forms.ComboBox cboModPrice;

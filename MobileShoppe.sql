@@ -42,7 +42,7 @@ CREATE TABLE tbl_Mobile (
     ModelId NVARCHAR(20),
     IMEINO NVARCHAR(50) PRIMARY KEY,
     Status NVARCHAR(20),
-    Warranty DATE,
+    Warranty INT,
     Price MONEY,
     FOREIGN KEY (ModelId) REFERENCES tbl_Model(ModelId)
 );
@@ -68,11 +68,11 @@ CREATE TABLE tbl_Sales (
 );
 
 INSERT INTO tbl_User VALUES
-('user1', '1', 'Nguyen Van A', '123 Le Loi, Q1', '0909123456', N'Tên thú cưng'),
-('user2', '1', 'Tran Thi B', '456 Tran Hung Dao, Q5', '0911123456', N'Món ăn yêu thích'),
-('admin', '1', 'Le Van C', '789 Cach Mang Thang 8, Q3', '0933123456', N'Trường cấp 1'),
-('user3', '1', 'Pham Duy D', '321 Nguyen Thi Minh Khai, Q10', '0944123456', N'Số yêu thích'),
-('user4', '1', 'Doan Thi E', '654 Hai Ba Trung, Q1', '0955123456', N'Động vật yêu thích');
+('user1', '1', 'Nguyen Van A', '123 Le Loi, Q1', '0909123456', N'Tralalero Tralala'),
+('user2', '1', 'Tran Thi B', '456 Tran Hung Dao, Q5', '0911123456', N'Tung Tung Tung Tung Sahur'),
+('admin', '1', 'Le Van C', '789 Cach Mang Thang 8, Q3', '0933123456', N'Brr Brr Patapim'),
+('user3', '1', 'Pham Duy D', '321 Nguyen Thi Minh Khai, Q10', '0944123456', N'Trippi Troppi'),
+('user4', '1', 'Doan Thi E', '654 Hai Ba Trung, Q1', '0955123456', N'Bombardino Crocodillo');
 GO
 
 INSERT INTO tbl_Company VALUES
@@ -100,11 +100,14 @@ INSERT INTO tbl_Transaction VALUES
 GO
 
 INSERT INTO tbl_Mobile VALUES
-('M001', '913220001', 'In Stock', '2026-04-01', 15000000),
-('M002', '913220002', 'In Stock', '2026-04-01', 15000000),
-('M003', '913220003', 'Sold', '2026-04-01', 10000000),
-('M004', '913220004', 'Sold', '2026-04-01', 7000000),
-('M005', '913220005', 'In Stock', '2026-04-01', 6000000);
+('M001', '913220001', 'Not Sold', 1, 15000000),
+('M002', '913220002', 'Not Sold', 2, 15000000),
+('M003', '913220003', 'Sold', 3, 10000000),
+('M004', '913220004', 'Sold', 1, 7000000),
+('M003', '913220005', 'Not Sold', 2, 6000000),
+('M005', '913220006', 'Sold', 1, 16000000),
+('M005', '913220007', 'Sold', 2, 36000000),
+('M002', '913220008', 'Sold', 2, 36000000);
 GO
 
 INSERT INTO tbl_Customer VALUES
@@ -118,9 +121,9 @@ GO
 INSERT INTO tbl_Sales VALUES
 ('S001', '913220003', '2025-04-10', 10000000, 'CU001'),
 ('S002', '913220004', '2025-04-11', 7000000, 'CU002'),
-('S003', '913220005', '2025-04-12', 6000000, 'CU003'),
-('S004', '913220001', '2025-04-13', 15000000, 'CU004'),
-('S005', '913220002', '2025-04-14', 15000000, 'CU005');
+('S004', '913220008', '2025-04-13', 15000000, 'CU003'),
+('S004', '913220006', '2025-04-13', 15000000, 'CU004'),
+('S005', '913220007', '2025-04-14', 15000000, 'CU005');
 GO
 
 select * from tbl_Company

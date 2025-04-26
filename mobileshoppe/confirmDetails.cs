@@ -73,13 +73,27 @@ namespace mobileshoppe
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
             {
                 conn.Open();
-                using (SqlCommand cmd = new SqlCommand("Select Warranty from tbl_Mobile where IMEINO = @IMEINO ", conn))
+                using (SqlCommand cmd = new SqlCommand("SELECT Warranty FROM tbl_Mobile WHERE IMEINO = @IMEINO", conn))
                 {
                     cmd.Parameters.AddWithValue("@IMEINO", IMEI);
-                    cmd.ExecuteNonQuery();
-                    DateTime dateTime = (DateTime)cmd.ExecuteScalar();
-                    Warranty = dateTime.ToString("yyyy-MM-dd");
-                    lblwarr.Text = Warranty;
+
+                    // Lấy số năm bảo hành
+                    object result = cmd.ExecuteScalar();
+                    if (result != null && int.TryParse(result.ToString(), out int warrantyYears))
+                    {
+                        // Cộng số năm bảo hành vào ngày hiện tại
+                        DateTime warrantyEndDate = DateTime.Now.AddYears(warrantyYears);
+
+                        // Định dạng ngày thành yyyy-MM-dd
+                        Warranty = warrantyEndDate.ToString("yyyy-MM-dd");
+
+                        // Hiển thị lên label
+                        lblwarr.Text = Warranty;
+                    }
+                    else
+                    {
+                        lblwarr.Text = "Không có thông tin bảo hành";
+                    }
                 }
             }
         }
