@@ -125,6 +125,23 @@ INSERT INTO tbl_Sales VALUES
 ('S005', 913220002, '2025-04-14', 15000000, 'CU005');
 GO
 
+select * from tbl_Company
+
+select * from tbl_Customer
+
+select * from tbl_Mobile
+
+select * from tbl_Model
+
+select * from tbl_Sales
+
+select * from tbl_Transaction
+
+select * from tbl_User
+
+ALTER TABLE tbl_Transaction
+DROP COLUMN Amount;
+
  --drop database MobileShoppedb;
 
 -- Disable all foreign key constraints

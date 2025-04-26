@@ -36,26 +36,46 @@ namespace mobileshoppe
 
                 {
                     conn.Open();
-                    cmd = new SqlCommand("SELECT ISNULL(MAX(CompanyID),0) from tbl_Company", conn);
+                    cmd = new SqlCommand("SELECT MAX(CompanyID) from tbl_Company", conn);
                     object result = cmd.ExecuteScalar();
-                    int i = 0;
-                    if (result != DBNull.Value && result != null && int.TryParse(result.ToString(), out i))
+
+                    if (result == DBNull.Value || result == null)
                     {
-                        i++;
-                        txtCompID.Text = i.ToString();
+                        txtCompID.Text = "C001";
                     }
                     else
                     {
-                        txtCompID.Text = "";
+                        string lastId = result.ToString();
+                        // Trích xuất phần số từ TransactionID (bỏ chữ 'T')
+                        if (lastId.StartsWith("C") && lastId.Length > 1)
+                        {
+                            string numPart = lastId.Substring(1);
+                            if (int.TryParse(numPart, out int lastNum))
+                            {
+                                // Tăng số lên 1 và định dạng thành 3 chữ số
+                                lastNum++;
+                                txtCompID.Text = "C" + lastNum.ToString("D3");
+                            }
+                            else
+                            {
+                                // Nếu không thể parse, tạo ID mặc định
+                                txtCompID.Text = "C001";
+                            }
+                        }
+                        else
+                        {
+                            txtCompID.Text = "C001";
+                        }
                     }
-
-
-
+                    // Đảm bảo TextBox không cho phép chỉnh sửa
+                    txtCompID.ReadOnly = true;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error retrieving ID: " + ex.Message);
+                MessageBox.Show("Lỗi khi tạo ID tự động: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtCompID.Text = "C001"; // ID mặc định nếu có lỗi
+                txtCompID.ReadOnly = true;
             }
 
         }
@@ -66,23 +86,47 @@ namespace mobileshoppe
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
                 {
                     conn.Open();
-                    cmd = new SqlCommand("SELECT ISNULL(MAX(ModelID),0) from tbl_Model", conn);
+                    cmd = new SqlCommand("SELECT MAX(ModelID) from tbl_Model", conn);
                     object result = cmd.ExecuteScalar();
-                    int i = 0;
-                    if (result != DBNull.Value && result != null && int.TryParse(result.ToString(), out i))
+                  
+                    if (result == DBNull.Value || result == null )
                     {
-                        i++;
-                        txtModID.Text = i.ToString();
+                       
+                        txtModID.Text = "M001";
                     }
                     else
                     {
-                        txtModID.Text = "";
+                        string lastId = result.ToString();
+                        // Trích xuất phần số từ TransactionID (bỏ chữ 'T')
+                        if (lastId.StartsWith("M") && lastId.Length > 1)
+                        {
+                            string numPart = lastId.Substring(1);
+                            if (int.TryParse(numPart, out int lastNum))
+                            {
+                                // Tăng số lên 1 và định dạng thành 3 chữ số
+                                lastNum++;
+                                txtModID.Text = "M" + lastNum.ToString("D3");
+                            }
+                            else
+                            {
+                                // Nếu không thể parse, tạo ID mặc định
+                                txtModID.Text = "M001";
+                            }
+                        }
+                        else
+                        {
+                            txtModID.Text = "M001";
+                        }
                     }
+                    // Đảm bảo TextBox không cho phép chỉnh sửa
+                    txtModID.ReadOnly = true;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error retrieving ID: " + ex.Message);
+                MessageBox.Show("Lỗi khi tạo ID tự động: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtModID.Text = "M001"; // ID mặc định nếu có lỗi
+                txtModID.ReadOnly = true;
             }
 
         }
@@ -91,29 +135,51 @@ namespace mobileshoppe
             try
             {
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
-
-
                 {
                     conn.Open();
-                    cmd = new SqlCommand("SELECT ISNULL(MAX(TransactionID),0) from tbl_Transaction", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT MAX(TransactionID) FROM tbl_Transaction", conn);
                     object result = cmd.ExecuteScalar();
-                    int i = 0;
-                    if (result != DBNull.Value && result != null && int.TryParse(result.ToString(), out i))
+
+                    if (result == DBNull.Value || result == null)
                     {
-                        i++;
-                        txtTransID.Text = i.ToString();
+                        // Nếu bảng trống, bắt đầu từ T001
+                        txtTransID.Text = "T001";
                     }
                     else
                     {
-                        txtTransID.Text = "";
+                        string lastId = result.ToString();
+                        // Trích xuất phần số từ TransactionID (bỏ chữ 'T')
+                        if (lastId.StartsWith("T") && lastId.Length > 1)
+                        {
+                            string numPart = lastId.Substring(1);
+                            if (int.TryParse(numPart, out int lastNum))
+                            {
+                                // Tăng số lên 1 và định dạng thành 3 chữ số
+                                lastNum++;
+                                txtTransID.Text = "T" + lastNum.ToString("D3");
+                            }
+                            else
+                            {
+                                // Nếu không thể parse, tạo ID mặc định
+                                txtTransID.Text = "T001";
+                            }
+                        }
+                        else
+                        {
+                            txtTransID.Text = "T001";
+                        }
                     }
+
+                    // Đảm bảo TextBox không cho phép chỉnh sửa
+                    txtTransID.ReadOnly = true;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error retrieving ID: " + ex.Message);
+                MessageBox.Show("Lỗi khi tạo ID tự động: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTransID.Text = "T001"; // ID mặc định nếu có lỗi
+                txtTransID.ReadOnly = true;
             }
-
         }
         public adminHomepage()
         {
@@ -134,7 +200,7 @@ namespace mobileshoppe
             try
             {
 
-                int CompanyID = int.Parse(txtCompID.Text);
+                String CompanyID = txtCompID.Text;
                 string CompanyName = txtCompName.Text;
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
                 {
@@ -150,52 +216,105 @@ namespace mobileshoppe
                     BindingCompanyName();
                 }
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 2627 || ex.Number == 2601) // Lỗi trùng khóa chính hoặc khóa duy nhất
+                {
+                    MessageBox.Show("Lỗi: Mã công ty đã tồn tại!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi SQL: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
             catch (Exception ex)
             {
-                MessageBox.Show("Error adding record: " + ex.Message);
+                MessageBox.Show("Lỗi khác: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            int transID = int.Parse(txtTransID.Text);
-            //int ModelID = Convert.ToInt32(cboModNo.SelectedValue);
-            decimal amount = decimal.Parse(txtAmount.Text); // Chuyển đổi giá trị từ string sang decimal
-            int Aquantity = int.Parse(txtQuantity.Text);
+            string transID = txtTransID.Text.Trim();  // ID tự động tạo từ hàm autoTransId
+            string quantity = txtQuantity.Text;
 
-
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
+            try
             {
-                conn.Open();
-                using (SqlCommand cmdGetModId = new SqlCommand("SELECT ModelID FROM tbl_Model WHERE ModelNumber = @ModelNumber", conn))
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
                 {
-                    cmdGetModId.Parameters.AddWithValue("@ModelNumber", cboModNo.Text.Trim());
-                    int ModelID = Convert.ToInt32(cmdGetModId.ExecuteScalar());
-
-                    cmd = new SqlCommand("Insert into tbl_Transaction values(@transID, @ModelID, @Aquantity, GETDATE(), @amount) ", conn);
-                    cmd.Parameters.AddWithValue("@transID", transID);
-                    cmd.Parameters.AddWithValue("@ModelID", ModelID);
-                    cmd.Parameters.AddWithValue("@Aquantity", Aquantity);
-                    cmd.Parameters.AddWithValue("@amount", amount);
-
-
-                    cmd.ExecuteNonQuery();
-                    using (SqlCommand cmdmodel = new SqlCommand("update tbl_Model set AvailableQty =  @Aquantity where ModelID = @ModelID ", conn))
+                    conn.Open();
+                    // Bắt đầu giao dịch
+                    using (SqlTransaction transaction = conn.BeginTransaction())
                     {
-                        cmdmodel.Parameters.AddWithValue("@Aquantity", Aquantity);
-                        cmdmodel.Parameters.AddWithValue("@ModelID", ModelID);
-                        cmdmodel.ExecuteNonQuery();
-                    }
-                    MessageBox.Show("Cập nhật thành công", "Thông Báo!");
+                        try
+                        {
+                            // Lấy ModelID
+                            using (SqlCommand cmdGetModId = new SqlCommand(
+                                "SELECT ModelID FROM tbl_Model WHERE ModelNumber = @ModelNumber", conn, transaction))
+                            {
+                                cmdGetModId.Parameters.AddWithValue("@ModelNumber", cboModNo.Text.Trim());
+                                object result = cmdGetModId.ExecuteScalar();
+                                if (result == null)
+                                {
+                                    MessageBox.Show("Không tìm thấy Model.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return;
+                                }
+                                string ModelID = result.ToString();
 
-                    autoTransId();
-                    txtQuantity.Clear();
-                    txtAmount.Clear();
+                                // Thêm giao dịch vào bảng tbl_Transaction
+                                using (SqlCommand cmd = new SqlCommand(
+                                    "INSERT INTO tbl_Transaction (TransactionID, ModelId, Quantity, Date) " +
+                                    "VALUES(@transID, @ModelID, @quantity, GETDATE())", conn, transaction))
+                                {
+                                    cmd.Parameters.AddWithValue("@transID", transID);
+                                    cmd.Parameters.AddWithValue("@ModelID", ModelID);
+                                    cmd.Parameters.AddWithValue("@quantity", quantity);
+                                    cmd.ExecuteNonQuery();
+                                }
+
+                                // Cập nhật số lượng trong bảng tbl_Model
+                                using (SqlCommand cmdmodel = new SqlCommand(
+                                    "UPDATE tbl_Model SET AvailableQty = AvailableQty + @quantity " +
+                                    "WHERE ModelID = @ModelID", conn, transaction))
+                                {
+                                    cmdmodel.Parameters.AddWithValue("@quantity", Convert.ToInt32(quantity));
+                                    cmdmodel.Parameters.AddWithValue("@ModelID", ModelID);
+                                    cmdmodel.ExecuteNonQuery();
+                                }
+
+                                transaction.Commit();
+                                MessageBox.Show("Cập nhật thành công", "Thông Báo!");
+                                autoTransId();  // Tạo lại ID tự động cho lần tiếp theo
+                                txtQuantity.Clear();
+                               
+                            }
+                        }
+                        catch
+                        {
+                            transaction.Rollback();
+                            throw;
+                        }
+                    }
                 }
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 2627 || ex.Number == 2601)
+                {
+                    MessageBox.Show("Mã giao dịch đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    autoTransId();  // Tạo ID mới nếu xảy ra lỗi trùng ID
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi SQL: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
         internal void BindingCompanyName()
         {
             try
@@ -249,30 +368,55 @@ namespace mobileshoppe
         }
         private void btnAddMod_Click(object sender, EventArgs e)
         {
-            int ModelID = int.Parse(txtModID.Text);
-            int CompanyID = Convert.ToInt32(cboCompNameMod.SelectedValue);
-            string ModelNumber = txtNum.Text;// tài liệu lúc string lúc int
-            int AvailableQty;
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
+            string ModelID = txtModID.Text.Trim();
+            string CompanyID = cboCompNameMod.SelectedValue.ToString().Trim();
+            string ModelNumber = txtNum.Text.Trim();
+            int AvailableQty = 0;
+
+            if (string.IsNullOrWhiteSpace(ModelID) || string.IsNullOrWhiteSpace(ModelNumber))
             {
-                conn.Open();
-                cmd = new SqlCommand("Insert into tbl_Model values(@ModelID, @ModelNumber, @AvailableQty, @CompanyID) ", conn);
-                cmd.Parameters.AddWithValue("@ModelID", ModelID);
-                cmd.Parameters.AddWithValue("@CompanyID", CompanyID);
-                cmd.Parameters.AddWithValue("@AvailableQty", 0);
-                cmd.Parameters.AddWithValue("@ModelNumber", ModelNumber);
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
+                {
+                    conn.Open();
+                    cmd = new SqlCommand(
+                        "INSERT INTO tbl_Model (ModelID, ModelNumber, AvailableQty, CompanyId) " +
+                        "VALUES (@ModelID, @ModelNumber, @AvailableQty, @CompanyID)", conn);
 
-                cmd.ExecuteNonQuery();
+                    cmd.Parameters.AddWithValue("@ModelID", ModelID);
+                    cmd.Parameters.AddWithValue("@ModelNumber", ModelNumber);
+                    cmd.Parameters.AddWithValue("@AvailableQty", AvailableQty);
+                    cmd.Parameters.AddWithValue("@CompanyID", CompanyID);
 
-                MessageBox.Show("Thêm thành công", "Thông Báo!");
+                    cmd.ExecuteNonQuery();
 
-                autoModId();
-                txtNum.Clear();
+                    MessageBox.Show("Thêm thành công", "Thông Báo!");
+
+                    autoModId();
+                    txtNum.Clear();
+                }
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 2627 || ex.Number == 2601)
+                {
+                    MessageBox.Show("Lỗi: Mã Model đã tồn tại!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi SQL: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
 
         private void cboCompNameMobile_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -321,35 +465,70 @@ namespace mobileshoppe
 
         private void btnAddMobile_Click(object sender, EventArgs e)
         {
-            int IMEINO = int.Parse(txtIMEINo.Text);
-            //int ModelID = Convert.ToInt32(cboModNo.SelectedValue);
-            decimal Price = decimal.Parse(txtPrice.Text); // Chuyển đổi giá trị từ string sang decimal
-            DateTime Warranty = dtpWarr.Value;
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
+            if (!int.TryParse(txtIMEINo.Text.Trim(), out int IMEINO))
             {
-                conn.Open();
-                using (SqlCommand getModIdCmd = new SqlCommand("SELECT ModelID FROM tbl_Model WHERE ModelNumber = @ModelNumber", conn))
+                MessageBox.Show("IMEI không hợp lệ. Vui lòng nhập số nguyên.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!decimal.TryParse(txtPrice.Text.Trim(), out decimal Price))
+            {
+                MessageBox.Show("Giá không hợp lệ. Vui lòng nhập số.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DateTime Warranty = dtpWarr.Value;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
                 {
-                    getModIdCmd.Parameters.AddWithValue("@ModelNumber", cboModNoMobile.Text.Trim());
-                    int ModelID = Convert.ToInt32(getModIdCmd.ExecuteScalar());
+                    conn.Open();
 
-                    cmd = new SqlCommand("Insert into tbl_Mobile values(@IMEINO, @ModelID, 'Not Sold', @Price, @Warranty) ", conn);
-                    cmd.Parameters.AddWithValue("@IMEINO", IMEINO);
-                    cmd.Parameters.AddWithValue("@ModelID", ModelID);
-                    cmd.Parameters.AddWithValue("@Price", Price);
-                    cmd.Parameters.AddWithValue("@Warranty", Warranty);
+                    using (SqlCommand getModIdCmd = new SqlCommand("SELECT ModelID FROM tbl_Model WHERE ModelNumber = @ModelNumber", conn))
+                    {
+                        getModIdCmd.Parameters.AddWithValue("@ModelNumber", cboModNoMobile.Text.Trim());
+                        string ModelID = getModIdCmd.ExecuteScalar()?.ToString();
 
+                        if (string.IsNullOrEmpty(ModelID))
+                        {
+                            MessageBox.Show("Không tìm thấy Model tương ứng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
 
-                    cmd.ExecuteNonQuery();
+                        SqlCommand cmd = new SqlCommand("INSERT INTO tbl_Mobile (IMEINO, ModelID, Status, Price, Warranty) VALUES (@IMEINO, @ModelID, 'Not Sold', @Price, @Warranty)", conn);
+                        cmd.Parameters.AddWithValue("@IMEINO", IMEINO);
+                        cmd.Parameters.AddWithValue("@ModelID", ModelID);
+                        cmd.Parameters.AddWithValue("@Price", Price);
+                        cmd.Parameters.AddWithValue("@Warranty", Warranty);
 
-                    MessageBox.Show("Cập nhật thành công", "Thông Báo!");
+                        cmd.ExecuteNonQuery();
 
-                    autoTransId();
-                    txtIMEINo.Clear();
-                    txtPrice.Clear();
+                        MessageBox.Show("Cập nhật thành công", "Thông Báo!");
+
+                        autoTransId();
+                        txtIMEINo.Clear();
+                        txtPrice.Clear();
+                    }
                 }
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 2627 || ex.Number == 2601)
+                {
+                    MessageBox.Show("IMEI đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi SQL: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void btnAddEmp_Click(object sender, EventArgs e)
         {
