@@ -124,7 +124,7 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(16, 15);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(769, 526);
@@ -134,9 +134,9 @@
             // 
             this.tabPage1.Controls.Add(this.tabControl2);
             this.tabPage1.Location = new System.Drawing.Point(4, 30);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(761, 492);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add";
@@ -148,7 +148,7 @@
             this.tabControl2.Controls.Add(this.tabPage6);
             this.tabControl2.Controls.Add(this.tabPage7);
             this.tabControl2.Location = new System.Drawing.Point(4, 0);
-            this.tabControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl2.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(747, 479);
@@ -162,9 +162,9 @@
             this.tabPage5.Controls.Add(this.label2);
             this.tabPage5.Controls.Add(this.label1);
             this.tabPage5.Location = new System.Drawing.Point(4, 30);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage5.Size = new System.Drawing.Size(739, 445);
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "Company";
@@ -174,7 +174,7 @@
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(255, 217);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 36);
             this.btnAdd.TabIndex = 4;
@@ -186,7 +186,7 @@
             // 
             this.txtCompName.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCompName.Location = new System.Drawing.Point(296, 143);
-            this.txtCompName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCompName.Margin = new System.Windows.Forms.Padding(4);
             this.txtCompName.Name = "txtCompName";
             this.txtCompName.Size = new System.Drawing.Size(132, 28);
             this.txtCompName.TabIndex = 3;
@@ -195,7 +195,7 @@
             // 
             this.txtCompID.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCompID.Location = new System.Drawing.Point(296, 75);
-            this.txtCompID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCompID.Margin = new System.Windows.Forms.Padding(4);
             this.txtCompID.Name = "txtCompID";
             this.txtCompID.Size = new System.Drawing.Size(132, 28);
             this.txtCompID.TabIndex = 2;
@@ -230,9 +230,9 @@
             this.tabPage6.Controls.Add(this.label9);
             this.tabPage6.Controls.Add(this.label8);
             this.tabPage6.Location = new System.Drawing.Point(4, 30);
-            this.tabPage6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage6.Size = new System.Drawing.Size(739, 445);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "Model";
@@ -242,7 +242,7 @@
             // 
             this.btnAddMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddMod.Location = new System.Drawing.Point(251, 266);
-            this.btnAddMod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddMod.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddMod.Name = "btnAddMod";
             this.btnAddMod.Size = new System.Drawing.Size(111, 36);
             this.btnAddMod.TabIndex = 6;
@@ -255,7 +255,7 @@
             this.cboCompNameMod.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCompNameMod.FormattingEnabled = true;
             this.cboCompNameMod.Location = new System.Drawing.Point(287, 129);
-            this.cboCompNameMod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboCompNameMod.Margin = new System.Windows.Forms.Padding(4);
             this.cboCompNameMod.Name = "cboCompNameMod";
             this.cboCompNameMod.Size = new System.Drawing.Size(180, 29);
             this.cboCompNameMod.TabIndex = 5;
@@ -264,7 +264,7 @@
             // 
             this.txtNum.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNum.Location = new System.Drawing.Point(287, 178);
-            this.txtNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNum.Margin = new System.Windows.Forms.Padding(4);
             this.txtNum.Name = "txtNum";
             this.txtNum.Size = new System.Drawing.Size(180, 28);
             this.txtNum.TabIndex = 4;
@@ -273,7 +273,7 @@
             // 
             this.txtModID.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtModID.Location = new System.Drawing.Point(287, 66);
-            this.txtModID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtModID.Margin = new System.Windows.Forms.Padding(4);
             this.txtModID.Name = "txtModID";
             this.txtModID.Size = new System.Drawing.Size(180, 28);
             this.txtModID.TabIndex = 3;
@@ -322,7 +322,7 @@
             this.tabPage7.Controls.Add(this.label12);
             this.tabPage7.Controls.Add(this.label11);
             this.tabPage7.Location = new System.Drawing.Point(4, 30);
-            this.tabPage7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage7.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Size = new System.Drawing.Size(739, 445);
             this.tabPage7.TabIndex = 2;
@@ -333,7 +333,7 @@
             // 
             this.btnAddMobile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddMobile.Location = new System.Drawing.Point(292, 284);
-            this.btnAddMobile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddMobile.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddMobile.Name = "btnAddMobile";
             this.btnAddMobile.Size = new System.Drawing.Size(115, 34);
             this.btnAddMobile.TabIndex = 10;
@@ -345,7 +345,7 @@
             // 
             this.dtpWarr.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpWarr.Location = new System.Drawing.Point(240, 223);
-            this.dtpWarr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpWarr.Margin = new System.Windows.Forms.Padding(4);
             this.dtpWarr.Name = "dtpWarr";
             this.dtpWarr.Size = new System.Drawing.Size(367, 28);
             this.dtpWarr.TabIndex = 9;
@@ -354,7 +354,7 @@
             // 
             this.txtPrice.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrice.Location = new System.Drawing.Point(240, 176);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(219, 28);
             this.txtPrice.TabIndex = 8;
@@ -363,7 +363,7 @@
             // 
             this.txtIMEINo.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIMEINo.Location = new System.Drawing.Point(240, 135);
-            this.txtIMEINo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIMEINo.Margin = new System.Windows.Forms.Padding(4);
             this.txtIMEINo.Name = "txtIMEINo";
             this.txtIMEINo.Size = new System.Drawing.Size(219, 28);
             this.txtIMEINo.TabIndex = 7;
@@ -373,7 +373,7 @@
             this.cboModNoMobile.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboModNoMobile.FormattingEnabled = true;
             this.cboModNoMobile.Location = new System.Drawing.Point(240, 90);
-            this.cboModNoMobile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboModNoMobile.Margin = new System.Windows.Forms.Padding(4);
             this.cboModNoMobile.Name = "cboModNoMobile";
             this.cboModNoMobile.Size = new System.Drawing.Size(219, 29);
             this.cboModNoMobile.TabIndex = 6;
@@ -383,7 +383,7 @@
             this.cboCompNameMobile.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCompNameMobile.FormattingEnabled = true;
             this.cboCompNameMobile.Location = new System.Drawing.Point(240, 42);
-            this.cboCompNameMobile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboCompNameMobile.Margin = new System.Windows.Forms.Padding(4);
             this.cboCompNameMobile.Name = "cboCompNameMobile";
             this.cboCompNameMobile.Size = new System.Drawing.Size(219, 29);
             this.cboCompNameMobile.TabIndex = 5;
@@ -453,9 +453,9 @@
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Location = new System.Drawing.Point(4, 30);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(761, 492);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Update Stock";
@@ -465,7 +465,7 @@
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Location = new System.Drawing.Point(327, 373);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(115, 38);
             this.btnUpdate.TabIndex = 10;
@@ -477,7 +477,7 @@
             // 
             this.cboModNo.FormattingEnabled = true;
             this.cboModNo.Location = new System.Drawing.Point(367, 170);
-            this.cboModNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboModNo.Margin = new System.Windows.Forms.Padding(4);
             this.cboModNo.Name = "cboModNo";
             this.cboModNo.Size = new System.Drawing.Size(188, 29);
             this.cboModNo.TabIndex = 9;
@@ -486,7 +486,7 @@
             // 
             this.cboCompNameUp.FormattingEnabled = true;
             this.cboCompNameUp.Location = new System.Drawing.Point(367, 118);
-            this.cboCompNameUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboCompNameUp.Margin = new System.Windows.Forms.Padding(4);
             this.cboCompNameUp.Name = "cboCompNameUp";
             this.cboCompNameUp.Size = new System.Drawing.Size(188, 29);
             this.cboCompNameUp.TabIndex = 8;
@@ -495,7 +495,7 @@
             // txtAmount
             // 
             this.txtAmount.Location = new System.Drawing.Point(367, 279);
-            this.txtAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAmount.Margin = new System.Windows.Forms.Padding(4);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(188, 28);
             this.txtAmount.TabIndex = 7;
@@ -503,7 +503,7 @@
             // txtQuantity
             // 
             this.txtQuantity.Location = new System.Drawing.Point(367, 214);
-            this.txtQuantity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtQuantity.Margin = new System.Windows.Forms.Padding(4);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(188, 28);
             this.txtQuantity.TabIndex = 6;
@@ -511,7 +511,7 @@
             // txtTransID
             // 
             this.txtTransID.Location = new System.Drawing.Point(367, 65);
-            this.txtTransID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTransID.Margin = new System.Windows.Forms.Padding(4);
             this.txtTransID.Name = "txtTransID";
             this.txtTransID.Size = new System.Drawing.Size(188, 28);
             this.txtTransID.TabIndex = 5;
@@ -570,7 +570,7 @@
             // 
             this.tabPage3.Controls.Add(this.tabControl3);
             this.tabPage3.Location = new System.Drawing.Point(4, 30);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(761, 492);
             this.tabPage3.TabIndex = 2;
@@ -582,7 +582,7 @@
             this.tabControl3.Controls.Add(this.tabPage8);
             this.tabControl3.Controls.Add(this.tabPage9);
             this.tabControl3.Location = new System.Drawing.Point(5, 5);
-            this.tabControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl3.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
             this.tabControl3.Size = new System.Drawing.Size(749, 478);
@@ -595,9 +595,9 @@
             this.tabPage8.Controls.Add(this.lblSearchDay);
             this.tabPage8.Controls.Add(this.label16);
             this.tabPage8.Location = new System.Drawing.Point(4, 30);
-            this.tabPage8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage8.Size = new System.Drawing.Size(741, 444);
             this.tabPage8.TabIndex = 0;
             this.tabPage8.Text = "Day";
@@ -607,7 +607,7 @@
             // 
             this.dgSaleReportDay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgSaleReportDay.Location = new System.Drawing.Point(43, 162);
-            this.dgSaleReportDay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgSaleReportDay.Margin = new System.Windows.Forms.Padding(4);
             this.dgSaleReportDay.Name = "dgSaleReportDay";
             this.dgSaleReportDay.RowHeadersWidth = 51;
             this.dgSaleReportDay.Size = new System.Drawing.Size(637, 224);
@@ -617,7 +617,7 @@
             // 
             this.dtpDay.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDay.Location = new System.Drawing.Point(183, 69);
-            this.dtpDay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDay.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDay.Name = "dtpDay";
             this.dtpDay.Size = new System.Drawing.Size(352, 28);
             this.dtpDay.TabIndex = 2;
@@ -654,9 +654,9 @@
             this.tabPage9.Controls.Add(this.label19);
             this.tabPage9.Controls.Add(this.label18);
             this.tabPage9.Location = new System.Drawing.Point(4, 30);
-            this.tabPage9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage9.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage9.Size = new System.Drawing.Size(741, 444);
             this.tabPage9.TabIndex = 1;
             this.tabPage9.Text = "Date to Date";
@@ -666,7 +666,7 @@
             // 
             this.dgSaleReportDate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgSaleReportDate.Location = new System.Drawing.Point(52, 169);
-            this.dgSaleReportDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgSaleReportDate.Margin = new System.Windows.Forms.Padding(4);
             this.dgSaleReportDate.Name = "dgSaleReportDate";
             this.dgSaleReportDate.RowHeadersWidth = 51;
             this.dgSaleReportDate.Size = new System.Drawing.Size(625, 224);
@@ -688,7 +688,7 @@
             this.dtpDateMax.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDateMax.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDateMax.Location = new System.Drawing.Point(196, 97);
-            this.dtpDateMax.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDateMax.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDateMax.Name = "dtpDateMax";
             this.dtpDateMax.Size = new System.Drawing.Size(323, 28);
             this.dtpDateMax.TabIndex = 3;
@@ -699,7 +699,7 @@
             this.dtpDateMin.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDateMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDateMin.Location = new System.Drawing.Point(196, 43);
-            this.dtpDateMin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDateMin.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDateMin.Name = "dtpDateMin";
             this.dtpDateMin.Size = new System.Drawing.Size(323, 26);
             this.dtpDateMin.TabIndex = 2;
@@ -743,7 +743,7 @@
             this.tabPage4.Controls.Add(this.label22);
             this.tabPage4.Controls.Add(this.label21);
             this.tabPage4.Location = new System.Drawing.Point(4, 30);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(761, 492);
             this.tabPage4.TabIndex = 3;
@@ -754,7 +754,7 @@
             // 
             this.btnAddEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddEmp.Location = new System.Drawing.Point(319, 406);
-            this.btnAddEmp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddEmp.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddEmp.Name = "btnAddEmp";
             this.btnAddEmp.Size = new System.Drawing.Size(115, 36);
             this.btnAddEmp.TabIndex = 14;
@@ -765,7 +765,7 @@
             // txtHint
             // 
             this.txtHint.Location = new System.Drawing.Point(304, 330);
-            this.txtHint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHint.Margin = new System.Windows.Forms.Padding(4);
             this.txtHint.Name = "txtHint";
             this.txtHint.Size = new System.Drawing.Size(213, 28);
             this.txtHint.TabIndex = 13;
@@ -773,7 +773,7 @@
             // txtRepass
             // 
             this.txtRepass.Location = new System.Drawing.Point(304, 262);
-            this.txtRepass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRepass.Margin = new System.Windows.Forms.Padding(4);
             this.txtRepass.Name = "txtRepass";
             this.txtRepass.Size = new System.Drawing.Size(213, 28);
             this.txtRepass.TabIndex = 12;
@@ -781,7 +781,7 @@
             // txtPass
             // 
             this.txtPass.Location = new System.Drawing.Point(304, 217);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(213, 28);
             this.txtPass.TabIndex = 11;
@@ -789,7 +789,7 @@
             // txtUser
             // 
             this.txtUser.Location = new System.Drawing.Point(304, 181);
-            this.txtUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(4);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(213, 28);
             this.txtUser.TabIndex = 10;
@@ -797,7 +797,7 @@
             // txtMobleNo
             // 
             this.txtMobleNo.Location = new System.Drawing.Point(304, 133);
-            this.txtMobleNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMobleNo.Margin = new System.Windows.Forms.Padding(4);
             this.txtMobleNo.Name = "txtMobleNo";
             this.txtMobleNo.Size = new System.Drawing.Size(213, 28);
             this.txtMobleNo.TabIndex = 9;
@@ -805,7 +805,7 @@
             // txtAdd
             // 
             this.txtAdd.Location = new System.Drawing.Point(304, 89);
-            this.txtAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAdd.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdd.Name = "txtAdd";
             this.txtAdd.Size = new System.Drawing.Size(213, 28);
             this.txtAdd.TabIndex = 8;
@@ -813,7 +813,7 @@
             // txtEmpName
             // 
             this.txtEmpName.Location = new System.Drawing.Point(304, 47);
-            this.txtEmpName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmpName.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmpName.Name = "txtEmpName";
             this.txtEmpName.Size = new System.Drawing.Size(213, 28);
             this.txtEmpName.TabIndex = 7;
@@ -908,7 +908,7 @@
             this.ClientSize = new System.Drawing.Size(805, 555);
             this.Controls.Add(this.lblLogout);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "adminHomepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "adminHomepage";
