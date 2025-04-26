@@ -55,10 +55,14 @@ namespace mobileshoppe
                 cboCompName.DataSource = ds.Tables["tbl_Company"];
                 cboCompName.DisplayMember = "CompanyName";
                 cboCompName.ValueMember = "CompanyID";
+                cboCompName.SelectedIndex = -1;
+                cboCompName.Text = "";
 
                 cboCompNameVS.DataSource = ds.Tables["tbl_Company"];
                 cboCompNameVS.DisplayMember = "CompanyName";
                 cboCompNameVS.ValueMember = "CompanyID";
+                cboCompNameVS.SelectedIndex = -1;
+                cboCompNameVS.Text = "";
             }
             catch (Exception ex)
             {
@@ -89,6 +93,10 @@ namespace mobileshoppe
                     }
                 }
             }
+            cboModNum.SelectedIndex = -1;
+            cboModNum.Text = "";
+            cboIMIENum.SelectedIndex = -1;
+            cboIMIENum.Text = "";
         }
         internal void BindingIMEI()
         {
@@ -137,6 +145,8 @@ namespace mobileshoppe
                     }
                 }
             }
+            cboIMIENum.SelectedIndex = -1;
+            cboIMIENum.Text = "";
         }
         private void btnSubmitSales_Click(object sender, EventArgs e)
         {
@@ -230,6 +240,8 @@ namespace mobileshoppe
 
                 }
             }
+            cboModNumVS.SelectedIndex = -1;
+            cboModNumVS.Text = "";
         }
 
         private void cboModNumVS_SelectedIndexChanged(object sender, EventArgs e)

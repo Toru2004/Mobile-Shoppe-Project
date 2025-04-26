@@ -870,6 +870,8 @@ namespace mobileshoppe
             }
             cboModUpdPrice.SelectedIndex = -1;
             cboModUpdPrice.Text = "";
+            cboIMEINoUpdPrice.SelectedIndex = -1;
+            cboIMEINoUpdPrice.Text = "";
         }
 
         private void btnUpdatePrice_Click(object sender, EventArgs e)

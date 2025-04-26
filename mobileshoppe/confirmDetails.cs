@@ -197,6 +197,8 @@ namespace mobileshoppe
                                         cmdmodel.Parameters.AddWithValue("@Aquantity", Aquantity);
                                         cmdmodel.Parameters.AddWithValue("@ModelID", ModelID);
                                         cmdmodel.ExecuteNonQuery();
+
+                                        MessageBox.Show("Bán hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     }
                                 }
                             }
