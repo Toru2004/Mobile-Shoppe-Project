@@ -46,6 +46,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.cboWarrDate = new System.Windows.Forms.ComboBox();
             this.btnAddMobile = new System.Windows.Forms.Button();
             this.dtpWarr = new System.Windows.Forms.DateTimePicker();
             this.txtPrice = new System.Windows.Forms.TextBox();
@@ -68,6 +69,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.cboIMEINo = new System.Windows.Forms.ComboBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.btnUpdatePrice = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.txtPriceUpdate = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage8 = new System.Windows.Forms.TabPage();
@@ -106,6 +118,7 @@
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage10.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage8.SuspendLayout();
@@ -119,6 +132,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage10);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -309,6 +323,7 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.cboWarrDate);
             this.tabPage7.Controls.Add(this.btnAddMobile);
             this.tabPage7.Controls.Add(this.dtpWarr);
             this.tabPage7.Controls.Add(this.txtPrice);
@@ -327,6 +342,14 @@
             this.tabPage7.TabIndex = 2;
             this.tabPage7.Text = "Mobile";
             this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // cboWarrDate
+            // 
+            this.cboWarrDate.FormattingEnabled = true;
+            this.cboWarrDate.Location = new System.Drawing.Point(240, 379);
+            this.cboWarrDate.Name = "cboWarrDate";
+            this.cboWarrDate.Size = new System.Drawing.Size(219, 29);
+            this.cboWarrDate.TabIndex = 11;
             // 
             // btnAddMobile
             // 
@@ -348,6 +371,7 @@
             this.dtpWarr.Name = "dtpWarr";
             this.dtpWarr.Size = new System.Drawing.Size(367, 28);
             this.dtpWarr.TabIndex = 9;
+            this.dtpWarr.ValueChanged += new System.EventHandler(this.dtpWarr_ValueChanged);
             // 
             // txtPrice
             // 
@@ -394,9 +418,9 @@
             this.label15.Location = new System.Drawing.Point(83, 223);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(128, 23);
+            this.label15.Size = new System.Drawing.Size(129, 23);
             this.label15.TabIndex = 4;
-            this.label15.Text = "Warranly Date:";
+            this.label15.Text = "Warranty Date:";
             // 
             // label14
             // 
@@ -554,6 +578,119 @@
             this.label3.Size = new System.Drawing.Size(80, 23);
             this.label3.TabIndex = 0;
             this.label3.Text = "Trans ID:";
+            // 
+            // tabPage10
+            // 
+            this.tabPage10.Controls.Add(this.cboIMEINo);
+            this.tabPage10.Controls.Add(this.label30);
+            this.tabPage10.Controls.Add(this.btnUpdatePrice);
+            this.tabPage10.Controls.Add(this.comboBox1);
+            this.tabPage10.Controls.Add(this.comboBox2);
+            this.tabPage10.Controls.Add(this.txtPriceUpdate);
+            this.tabPage10.Controls.Add(this.label17);
+            this.tabPage10.Controls.Add(this.label20);
+            this.tabPage10.Controls.Add(this.label28);
+            this.tabPage10.Controls.Add(this.label29);
+            this.tabPage10.Location = new System.Drawing.Point(4, 30);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage10.Size = new System.Drawing.Size(761, 492);
+            this.tabPage10.TabIndex = 4;
+            this.tabPage10.Text = "Update Price";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // cboIMEINo
+            // 
+            this.cboIMEINo.FormattingEnabled = true;
+            this.cboIMEINo.Location = new System.Drawing.Point(388, 200);
+            this.cboIMEINo.Name = "cboIMEINo";
+            this.cboIMEINo.Size = new System.Drawing.Size(188, 29);
+            this.cboIMEINo.TabIndex = 20;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(185, 200);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(109, 29);
+            this.label30.TabIndex = 19;
+            this.label30.Text = "lbIMEINo";
+            // 
+            // btnUpdatePrice
+            // 
+            this.btnUpdatePrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdatePrice.Location = new System.Drawing.Point(348, 355);
+            this.btnUpdatePrice.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUpdatePrice.Name = "btnUpdatePrice";
+            this.btnUpdatePrice.Size = new System.Drawing.Size(115, 38);
+            this.btnUpdatePrice.TabIndex = 18;
+            this.btnUpdatePrice.Text = "UPDATE";
+            this.btnUpdatePrice.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(388, 152);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(188, 29);
+            this.comboBox1.TabIndex = 17;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(388, 100);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(188, 29);
+            this.comboBox2.TabIndex = 16;
+            // 
+            // txtPriceUpdate
+            // 
+            this.txtPriceUpdate.Location = new System.Drawing.Point(388, 250);
+            this.txtPriceUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPriceUpdate.Name = "txtPriceUpdate";
+            this.txtPriceUpdate.Size = new System.Drawing.Size(188, 28);
+            this.txtPriceUpdate.TabIndex = 15;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(184, 261);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(0, 23);
+            this.label17.TabIndex = 14;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(185, 250);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(54, 23);
+            this.label20.TabIndex = 13;
+            this.label20.Text = "Price:";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(185, 150);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(140, 23);
+            this.label28.TabIndex = 12;
+            this.label28.Text = "Model Number:";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(185, 100);
+            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(145, 23);
+            this.label29.TabIndex = 11;
+            this.label29.Text = "Company Name:";
             // 
             // tabPage3
             // 
@@ -894,7 +1031,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 555);
+            this.ClientSize = new System.Drawing.Size(803, 557);
             this.Controls.Add(this.lblLogout);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -913,6 +1050,8 @@
             this.tabPage7.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage10.ResumeLayout(false);
+            this.tabPage10.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
             this.tabPage8.ResumeLayout(false);
@@ -1001,5 +1140,17 @@
         private System.Windows.Forms.Button btnAddMod;
         private System.Windows.Forms.Button btnAddMobile;
         private System.Windows.Forms.Label lblLogout;
+        private System.Windows.Forms.ComboBox cboWarrDate;
+        private System.Windows.Forms.TabPage tabPage10;
+        private System.Windows.Forms.Button btnUpdatePrice;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox txtPriceUpdate;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.ComboBox cboIMEINo;
+        private System.Windows.Forms.Label label30;
     }
 }

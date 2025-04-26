@@ -672,5 +672,10 @@ namespace mobileshoppe
                 dgSaleReportDate.DataSource = dt;
             }
         }
+
+        private void dtpWarr_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
