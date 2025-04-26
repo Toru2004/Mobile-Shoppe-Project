@@ -34,7 +34,6 @@ CREATE TABLE tbl_Transaction (
     ModelId NVARCHAR(20),
     Quantity INT,
     Date DATE,
-    Amount MONEY,
     FOREIGN KEY (ModelId) REFERENCES tbl_Model(ModelId)
 );
 
@@ -93,11 +92,11 @@ INSERT INTO tbl_Model VALUES
 GO
 
 INSERT INTO tbl_Transaction VALUES
-('T001', 'M001', 2, '2025-04-01', 30000000),
-('T002', 'M002', 3, '2025-04-02', 45000000),
-('T003', 'M003', 5, '2025-04-03', 25000000),
-('T004', 'M004', 4, '2025-04-04', 28000000),
-('T005', 'M005', 1, '2025-04-05', 6000000);
+('T001', 'M001', 2, '2025-04-01'),
+('T002', 'M002', 3, '2025-04-02'),
+('T003', 'M003', 5, '2025-04-03'),
+('T004', 'M004', 4, '2025-04-04'),
+('T005', 'M005', 1, '2025-04-05');
 GO
 
 INSERT INTO tbl_Mobile VALUES
@@ -123,6 +122,23 @@ INSERT INTO tbl_Sales VALUES
 ('S004', 913220001, '2025-04-13', 15000000, 'CU004'),
 ('S005', 913220002, '2025-04-14', 15000000, 'CU005');
 GO
+
+select * from tbl_Company
+
+select * from tbl_Customer
+
+select * from tbl_Mobile
+
+select * from tbl_Model
+
+select * from tbl_Sales
+
+select * from tbl_Transaction
+
+select * from tbl_User
+
+ALTER TABLE tbl_Transaction
+DROP COLUMN Amount;
 
  --drop database MobileShoppedb;
 

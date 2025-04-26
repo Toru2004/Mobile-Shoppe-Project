@@ -61,7 +61,6 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.cboModNo = new System.Windows.Forms.ComboBox();
             this.cboCompNameUp = new System.Windows.Forms.ComboBox();
-            this.txtAmount = new System.Windows.Forms.TextBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtTransID = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -444,7 +443,6 @@
             this.tabPage2.Controls.Add(this.btnUpdate);
             this.tabPage2.Controls.Add(this.cboModNo);
             this.tabPage2.Controls.Add(this.cboCompNameUp);
-            this.tabPage2.Controls.Add(this.txtAmount);
             this.tabPage2.Controls.Add(this.txtQuantity);
             this.tabPage2.Controls.Add(this.txtTransID);
             this.tabPage2.Controls.Add(this.label7);
@@ -492,14 +490,6 @@
             this.cboCompNameUp.TabIndex = 8;
             this.cboCompNameUp.SelectedIndexChanged += new System.EventHandler(this.cboCompNameUp_SelectedIndexChanged);
             // 
-            // txtAmount
-            // 
-            this.txtAmount.Location = new System.Drawing.Point(367, 279);
-            this.txtAmount.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(188, 28);
-            this.txtAmount.TabIndex = 7;
-            // 
             // txtQuantity
             // 
             this.txtQuantity.Location = new System.Drawing.Point(367, 214);
@@ -522,9 +512,8 @@
             this.label7.Location = new System.Drawing.Point(163, 279);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 23);
+            this.label7.Size = new System.Drawing.Size(0, 23);
             this.label7.TabIndex = 4;
-            this.label7.Text = "Amount:";
             // 
             // label6
             // 
@@ -956,7 +945,6 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.ComboBox cboCompNameUp;
-        private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.TextBox txtTransID;
         private System.Windows.Forms.Label label7;
