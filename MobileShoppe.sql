@@ -5,33 +5,33 @@ GO
 
 -- tbl_User
 CREATE TABLE tbl_User (
-    Username VARCHAR(20) PRIMARY KEY,
-    Pwd VARCHAR(20), -- Password
-    EmployeeName VARCHAR(20),
-    Address VARCHAR(MAX),
-    MobileNumber VARCHAR(20),
-    Hint VARCHAR(50)
+    Username NVARCHAR(20) PRIMARY KEY,
+    Pwd NVARCHAR(20), -- Password
+    EmployeeName NVARCHAR(50),
+    Address NVARCHAR(MAX),
+    MobileNumber NVARCHAR(20),
+    Hint NVARCHAR(50)
 );
 
 -- tbl_Company
 CREATE TABLE tbl_Company (
-    CompanyID VARCHAR(20) PRIMARY KEY,
-    CompanyName VARCHAR(20)
+    CompanyID NVARCHAR(20) PRIMARY KEY,
+    CompanyName NVARCHAR(50)
 );
 
 -- tbl_Model
 CREATE TABLE tbl_Model (
-    ModelID VARCHAR(20) PRIMARY KEY,
-    CompanyId VARCHAR(20),
-    ModelNumber VARCHAR(20),
+    ModelID NVARCHAR(20) PRIMARY KEY,
+    CompanyId NVARCHAR(20),
+    ModelNumber NVARCHAR(50),
     AvailableQty INT,
     FOREIGN KEY (CompanyId) REFERENCES tbl_Company(CompanyId)
 );
 
 -- tbl_Transaction
 CREATE TABLE tbl_Transaction (
-    TransactionID VARCHAR(20) PRIMARY KEY,
-    ModelId VARCHAR(20),
+    TransactionID NVARCHAR(20) PRIMARY KEY,
+    ModelId NVARCHAR(20),
     Quantity INT,
     Date DATE,
     Amount MONEY,
@@ -40,9 +40,9 @@ CREATE TABLE tbl_Transaction (
 
 -- tbl_Mobile
 CREATE TABLE tbl_Mobile (
-    ModelId VARCHAR(20),
-    IMEINO INT PRIMARY KEY,
-    Status VARCHAR(20),
+    ModelId NVARCHAR(20),
+    IMEINO NVARCHAR(50) PRIMARY KEY,
+    Status NVARCHAR(20),
     Warranty DATE,
     Price MONEY,
     FOREIGN KEY (ModelId) REFERENCES tbl_Model(ModelId)
@@ -50,24 +50,23 @@ CREATE TABLE tbl_Mobile (
 
 -- tbl_Customer
 CREATE TABLE tbl_Customer (
-    CustomerID VARCHAR(20) PRIMARY KEY,
-    CustomerName VARCHAR(20),
-    MobileNumber VARCHAR(20),
-    EmailID VARCHAR(20),
-    Address VARCHAR(MAX)
+    CustomerID NVARCHAR(20) PRIMARY KEY,
+    CustomerName NVARCHAR(50),
+    MobileNumber NVARCHAR(20),
+    EmailID NVARCHAR(50),
+    Address NVARCHAR(MAX)
 );
 
 -- tbl_Sales
 CREATE TABLE tbl_Sales (
-    SalesID VARCHAR(20) PRIMARY KEY,
+    SalesID NVARCHAR(20) PRIMARY KEY,
     IMEINO INT,
     SalesDate DATE,
     Price MONEY,
-    CustomerID VARCHAR(20),
+    CustomerID NVARCHAR(20),
     FOREIGN KEY (IMEINO) REFERENCES tbl_Mobile(IMEINO),
     FOREIGN KEY (CustomerID) REFERENCES tbl_Customer(CustomerID)
 );
-
 
 INSERT INTO tbl_User VALUES
 ('user1', '1', 'Nguyen Van A', '123 Le Loi, Q1', '0909123456', N'Tên thú cưng'),
@@ -102,11 +101,11 @@ INSERT INTO tbl_Transaction VALUES
 GO
 
 INSERT INTO tbl_Mobile VALUES
-('M001', 913220001, 'In Stock', '2026-04-01', 15000000),
-('M002', 913220002, 'In Stock', '2026-04-01', 15000000),
-('M003', 913220003, 'Sold', '2026-04-01', 10000000),
-('M004', 913220004, 'Sold', '2026-04-01', 7000000),
-('M005', 913220005, 'In Stock', '2026-04-01', 6000000);
+('M001', '913220001', 'In Stock', '2026-04-01', 15000000),
+('M002', '913220002', 'In Stock', '2026-04-01', 15000000),
+('M003', '913220003', 'Sold', '2026-04-01', 10000000),
+('M004', '913220004', 'Sold', '2026-04-01', 7000000),
+('M005', '913220005', 'In Stock', '2026-04-01', 6000000);
 GO
 
 INSERT INTO tbl_Customer VALUES

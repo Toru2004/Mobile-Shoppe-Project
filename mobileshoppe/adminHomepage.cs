@@ -191,7 +191,7 @@ namespace mobileshoppe
                 using (SqlCommand cmdGetModId = new SqlCommand("SELECT ModelID FROM tbl_Model WHERE ModelNumber = @ModelNumber", conn))
                 {
                     cmdGetModId.Parameters.AddWithValue("@ModelNumber", cboModNo.Text.Trim());
-                    int ModelID = Convert.ToInt32(cmdGetModId.ExecuteScalar());
+                    string ModelID = cmdGetModId.ExecuteScalar().ToString();
 
                     cmd = new SqlCommand("Insert into tbl_Transaction values(@transID, @ModelID, @Aquantity, GETDATE(), @amount) ", conn);
                     cmd.Parameters.AddWithValue("@transID", transID);
@@ -271,11 +271,11 @@ namespace mobileshoppe
             string ModelID = txtModID.Text;
             string CompanyID = cboCompNameMod.SelectedValue.ToString();
             string ModelNumber = txtNum.Text;// tài liệu lúc string lúc int
-            int AvailableQty;
+            //int AvailableQty;
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
             {
                 conn.Open();
-                cmd = new SqlCommand("Insert into tbl_Model values(@ModelID, @ModelNumber, @AvailableQty, @CompanyID) ", conn);
+                cmd = new SqlCommand("Insert into tbl_Model values(@ModelID, @CompanyID, @ModelNumber, @AvailableQty) ", conn);
                 cmd.Parameters.AddWithValue("@ModelID", ModelID);
                 cmd.Parameters.AddWithValue("@CompanyID", CompanyID);
                 cmd.Parameters.AddWithValue("@AvailableQty", 0);
@@ -385,7 +385,7 @@ namespace mobileshoppe
                 {
                     using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
                     {
-                        cmd = new SqlCommand("Insert into [user] values(@Username, @Pwd, @EmployeeName, @Address, @MobileNumber, @Hint) ", conn);
+                        cmd = new SqlCommand("Insert into tbl_User values(@Username, @Pwd, @EmployeeName, @Address, @MobileNumber, @Hint) ", conn);
                         cmd.Parameters.AddWithValue("@Username", Username);
                         cmd.Parameters.AddWithValue("@Pwd", Pwd);
                         cmd.Parameters.AddWithValue("@EmployeeName", EmployeeName);
