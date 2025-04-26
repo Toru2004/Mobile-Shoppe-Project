@@ -53,188 +53,207 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 42);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(16, 52);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 20);
+            this.label1.Size = new System.Drawing.Size(150, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Custommer Name:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 97);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(39, 119);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 20);
+            this.label2.Size = new System.Drawing.Size(127, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mobile Number:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 170);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(90, 187);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 20);
+            this.label3.Size = new System.Drawing.Size(76, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Address:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(15, 233);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(88, 250);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 20);
+            this.label4.Size = new System.Drawing.Size(78, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "Email ID:";
             // 
             // lblcustname
             // 
             this.lblcustname.AutoSize = true;
-            this.lblcustname.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcustname.Location = new System.Drawing.Point(154, 42);
+            this.lblcustname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcustname.Location = new System.Drawing.Point(174, 52);
+            this.lblcustname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblcustname.Name = "lblcustname";
-            this.lblcustname.Size = new System.Drawing.Size(55, 21);
+            this.lblcustname.Size = new System.Drawing.Size(53, 20);
             this.lblcustname.TabIndex = 4;
             this.lblcustname.Text = "label5";
             // 
             // lblmobnum
             // 
             this.lblmobnum.AutoSize = true;
-            this.lblmobnum.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmobnum.Location = new System.Drawing.Point(151, 97);
+            this.lblmobnum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmobnum.Location = new System.Drawing.Point(174, 119);
+            this.lblmobnum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblmobnum.Name = "lblmobnum";
-            this.lblmobnum.Size = new System.Drawing.Size(55, 21);
+            this.lblmobnum.Size = new System.Drawing.Size(53, 20);
             this.lblmobnum.TabIndex = 5;
             this.lblmobnum.Text = "label6";
             // 
             // lbladdress
             // 
             this.lbladdress.AutoSize = true;
-            this.lbladdress.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbladdress.Location = new System.Drawing.Point(118, 170);
+            this.lbladdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbladdress.Location = new System.Drawing.Point(174, 187);
+            this.lbladdress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbladdress.Name = "lbladdress";
-            this.lbladdress.Size = new System.Drawing.Size(55, 21);
+            this.lbladdress.Size = new System.Drawing.Size(53, 20);
             this.lbladdress.TabIndex = 6;
             this.lbladdress.Text = "label7";
             // 
             // lblemail
             // 
             this.lblemail.AutoSize = true;
-            this.lblemail.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblemail.Location = new System.Drawing.Point(116, 233);
+            this.lblemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblemail.Location = new System.Drawing.Point(174, 250);
+            this.lblemail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblemail.Name = "lblemail";
-            this.lblemail.Size = new System.Drawing.Size(55, 21);
+            this.lblemail.Size = new System.Drawing.Size(53, 20);
             this.lblemail.TabIndex = 7;
             this.lblemail.Text = "label8";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(239, 42);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(319, 52);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(129, 20);
+            this.label9.Size = new System.Drawing.Size(133, 20);
             this.label9.TabIndex = 8;
             this.label9.Text = "Company Name:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(242, 97);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(329, 119);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(125, 20);
+            this.label10.Size = new System.Drawing.Size(123, 20);
             this.label10.TabIndex = 9;
             this.label10.Text = "Model Number:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(242, 169);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(405, 184);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(44, 20);
+            this.label11.Size = new System.Drawing.Size(47, 20);
             this.label11.TabIndex = 10;
             this.label11.Text = "IMEI:";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(245, 233);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(399, 250);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(49, 20);
+            this.label12.Size = new System.Drawing.Size(53, 20);
             this.label12.TabIndex = 11;
             this.label12.Text = "Price:";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(245, 287);
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(370, 315);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(79, 20);
+            this.label13.Size = new System.Drawing.Size(82, 20);
             this.label13.TabIndex = 12;
             this.label13.Text = "Warranty:";
             // 
             // lblcompname
             // 
             this.lblcompname.AutoSize = true;
-            this.lblcompname.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcompname.Location = new System.Drawing.Point(363, 42);
+            this.lblcompname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcompname.Location = new System.Drawing.Point(460, 52);
+            this.lblcompname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblcompname.Name = "lblcompname";
-            this.lblcompname.Size = new System.Drawing.Size(64, 21);
+            this.lblcompname.Size = new System.Drawing.Size(62, 20);
             this.lblcompname.TabIndex = 13;
             this.lblcompname.Text = "label14";
             // 
             // lblmodnum
             // 
             this.lblmodnum.AutoSize = true;
-            this.lblmodnum.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmodnum.Location = new System.Drawing.Point(362, 97);
+            this.lblmodnum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmodnum.Location = new System.Drawing.Point(460, 119);
+            this.lblmodnum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblmodnum.Name = "lblmodnum";
-            this.lblmodnum.Size = new System.Drawing.Size(64, 21);
+            this.lblmodnum.Size = new System.Drawing.Size(62, 20);
             this.lblmodnum.TabIndex = 14;
             this.lblmodnum.Text = "label15";
             // 
             // lblIMEI
             // 
             this.lblIMEI.AutoSize = true;
-            this.lblIMEI.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIMEI.Location = new System.Drawing.Point(330, 167);
+            this.lblIMEI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIMEI.Location = new System.Drawing.Point(460, 184);
+            this.lblIMEI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIMEI.Name = "lblIMEI";
-            this.lblIMEI.Size = new System.Drawing.Size(64, 21);
+            this.lblIMEI.Size = new System.Drawing.Size(62, 20);
             this.lblIMEI.TabIndex = 15;
             this.lblIMEI.Text = "label16";
             // 
             // lblprice
             // 
             this.lblprice.AutoSize = true;
-            this.lblprice.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblprice.Location = new System.Drawing.Point(334, 219);
+            this.lblprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblprice.Location = new System.Drawing.Point(460, 250);
+            this.lblprice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblprice.Name = "lblprice";
-            this.lblprice.Size = new System.Drawing.Size(64, 21);
+            this.lblprice.Size = new System.Drawing.Size(62, 20);
             this.lblprice.TabIndex = 16;
             this.lblprice.Text = "label17";
             // 
             // lblwarr
             // 
             this.lblwarr.AutoSize = true;
-            this.lblwarr.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblwarr.Location = new System.Drawing.Point(338, 286);
+            this.lblwarr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblwarr.Location = new System.Drawing.Point(460, 315);
+            this.lblwarr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblwarr.Name = "lblwarr";
-            this.lblwarr.Size = new System.Drawing.Size(64, 21);
+            this.lblwarr.Size = new System.Drawing.Size(62, 20);
             this.lblwarr.TabIndex = 17;
             this.lblwarr.Text = "label18";
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(85, 361);
+            this.btnCancel.Location = new System.Drawing.Point(113, 444);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(100, 28);
             this.btnCancel.TabIndex = 18;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -242,9 +261,10 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(284, 361);
+            this.btnOK.Location = new System.Drawing.Point(379, 444);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
+            this.btnOK.Size = new System.Drawing.Size(100, 28);
             this.btnOK.TabIndex = 19;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -252,9 +272,9 @@
             // 
             // confirmDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(459, 451);
+            this.ClientSize = new System.Drawing.Size(612, 555);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblwarr);
@@ -275,9 +295,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "confirmDetails";
-            this.Text = "confirmDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "confirmDetails";
             this.ResumeLayout(false);
             this.PerformLayout();
 

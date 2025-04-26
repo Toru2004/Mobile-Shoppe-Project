@@ -56,5 +56,10 @@ namespace mobileshoppe
         {
             linkBack.ForeColor = SystemColors.ControlText;
         }
+
+        private void link_forgotpass_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
