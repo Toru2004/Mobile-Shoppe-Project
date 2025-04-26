@@ -73,8 +73,8 @@
             this.cboIMEINo = new System.Windows.Forms.ComboBox();
             this.label30 = new System.Windows.Forms.Label();
             this.btnUpdatePrice = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboModPrice = new System.Windows.Forms.ComboBox();
+            this.cboCompNamePrice = new System.Windows.Forms.ComboBox();
             this.txtPriceUpdate = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -584,8 +584,8 @@
             this.tabPage10.Controls.Add(this.cboIMEINo);
             this.tabPage10.Controls.Add(this.label30);
             this.tabPage10.Controls.Add(this.btnUpdatePrice);
-            this.tabPage10.Controls.Add(this.comboBox1);
-            this.tabPage10.Controls.Add(this.comboBox2);
+            this.tabPage10.Controls.Add(this.cboModPrice);
+            this.tabPage10.Controls.Add(this.cboCompNamePrice);
             this.tabPage10.Controls.Add(this.txtPriceUpdate);
             this.tabPage10.Controls.Add(this.label17);
             this.tabPage10.Controls.Add(this.label20);
@@ -612,7 +612,7 @@
             this.label30.AutoSize = true;
             this.label30.Location = new System.Drawing.Point(185, 200);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(109, 29);
+            this.label30.Size = new System.Drawing.Size(87, 23);
             this.label30.TabIndex = 19;
             this.label30.Text = "lbIMEINo";
             // 
@@ -626,24 +626,27 @@
             this.btnUpdatePrice.TabIndex = 18;
             this.btnUpdatePrice.Text = "UPDATE";
             this.btnUpdatePrice.UseVisualStyleBackColor = true;
+            this.btnUpdatePrice.Click += new System.EventHandler(this.btnUpdatePrice_Click);
             // 
-            // comboBox1
+            // cboModPrice
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(388, 152);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(188, 29);
-            this.comboBox1.TabIndex = 17;
+            this.cboModPrice.FormattingEnabled = true;
+            this.cboModPrice.Location = new System.Drawing.Point(388, 152);
+            this.cboModPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.cboModPrice.Name = "cboModPrice";
+            this.cboModPrice.Size = new System.Drawing.Size(188, 29);
+            this.cboModPrice.TabIndex = 17;
+            this.cboModPrice.SelectedIndexChanged += new System.EventHandler(this.cboModPrice_SelectedIndexChanged);
             // 
-            // comboBox2
+            // cboCompNamePrice
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(388, 100);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(188, 29);
-            this.comboBox2.TabIndex = 16;
+            this.cboCompNamePrice.FormattingEnabled = true;
+            this.cboCompNamePrice.Location = new System.Drawing.Point(388, 100);
+            this.cboCompNamePrice.Margin = new System.Windows.Forms.Padding(4);
+            this.cboCompNamePrice.Name = "cboCompNamePrice";
+            this.cboCompNamePrice.Size = new System.Drawing.Size(188, 29);
+            this.cboCompNamePrice.TabIndex = 16;
+            this.cboCompNamePrice.SelectedIndexChanged += new System.EventHandler(this.cboCompNamePrice_SelectedIndexChanged);
             // 
             // txtPriceUpdate
             // 
@@ -1143,8 +1146,8 @@
         private System.Windows.Forms.ComboBox cboWarrDate;
         private System.Windows.Forms.TabPage tabPage10;
         private System.Windows.Forms.Button btnUpdatePrice;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboModPrice;
+        private System.Windows.Forms.ComboBox cboCompNamePrice;
         private System.Windows.Forms.TextBox txtPriceUpdate;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label20;
