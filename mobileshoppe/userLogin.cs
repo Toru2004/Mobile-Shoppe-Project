@@ -39,7 +39,6 @@ namespace mobileshoppe
                 SqlCommand cmd = new SqlCommand("select count(*) from tbl_User where Username = @Username and Pwd = @Pwd  ", conn);
                 cmd.Parameters.AddWithValue("@Username", Username);
                 cmd.Parameters.AddWithValue("@Pwd", Pwd);
-
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 check = (int)cmd.ExecuteScalar();

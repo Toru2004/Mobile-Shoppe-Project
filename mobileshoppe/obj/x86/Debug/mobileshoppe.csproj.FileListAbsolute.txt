@@ -1,0 +1,16 @@
+D:\HK2_2024_2025\XDHTTTQL\Mobile-Shoppe-Project\mobileshoppe\bin\x86\Debug\mobileshoppe.exe.config
+D:\HK2_2024_2025\XDHTTTQL\Mobile-Shoppe-Project\mobileshoppe\bin\x86\Debug\mobileshoppe.exe
+D:\HK2_2024_2025\XDHTTTQL\Mobile-Shoppe-Project\mobileshoppe\bin\x86\Debug\mobileshoppe.pdb
+D:\HK2_2024_2025\XDHTTTQL\Mobile-Shoppe-Project\mobileshoppe\obj\x86\Debug\mobileshoppe.csproj.AssemblyReference.cache
+D:\HK2_2024_2025\XDHTTTQL\Mobile-Shoppe-Project\mobileshoppe\obj\x86\Debug\mobileshoppe.adminHomepage.resources
+D:\HK2_2024_2025\XDHTTTQL\Mobile-Shoppe-Project\mobileshoppe\obj\x86\Debug\mobileshoppe.adminLogin.resources
+D:\HK2_2024_2025\XDHTTTQL\Mobile-Shoppe-Project\mobileshoppe\obj\x86\Debug\mobileshoppe.confirmDetails.resources
+D:\HK2_2024_2025\XDHTTTQL\Mobile-Shoppe-Project\mobileshoppe\obj\x86\Debug\mobileshoppe.forgotPassword.resources
+D:\HK2_2024_2025\XDHTTTQL\Mobile-Shoppe-Project\mobileshoppe\obj\x86\Debug\mobileshoppe.Page.resources
+D:\HK2_2024_2025\XDHTTTQL\Mobile-Shoppe-Project\mobileshoppe\obj\x86\Debug\mobileshoppe.Properties.Resources.resources
+D:\HK2_2024_2025\XDHTTTQL\Mobile-Shoppe-Project\mobileshoppe\obj\x86\Debug\mobileshoppe.userHomepage.resources
+D:\HK2_2024_2025\XDHTTTQL\Mobile-Shoppe-Project\mobileshoppe\obj\x86\Debug\mobileshoppe.userLogin.resources
+D:\HK2_2024_2025\XDHTTTQL\Mobile-Shoppe-Project\mobileshoppe\obj\x86\Debug\mobileshoppe.csproj.GenerateResource.cache
+D:\HK2_2024_2025\XDHTTTQL\Mobile-Shoppe-Project\mobileshoppe\obj\x86\Debug\mobileshoppe.csproj.CoreCompileInputs.cache
+D:\HK2_2024_2025\XDHTTTQL\Mobile-Shoppe-Project\mobileshoppe\obj\x86\Debug\mobileshoppe.exe
+D:\HK2_2024_2025\XDHTTTQL\Mobile-Shoppe-Project\mobileshoppe\obj\x86\Debug\mobileshoppe.pdb
