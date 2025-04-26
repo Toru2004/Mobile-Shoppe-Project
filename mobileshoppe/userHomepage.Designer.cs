@@ -75,7 +75,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(17, 9);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(579, 534);
@@ -102,9 +102,9 @@
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(571, 505);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Sales";
@@ -123,7 +123,7 @@
             // btnSubmitSales
             // 
             this.btnSubmitSales.Location = new System.Drawing.Point(279, 458);
-            this.btnSubmitSales.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSubmitSales.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubmitSales.Name = "btnSubmitSales";
             this.btnSubmitSales.Size = new System.Drawing.Size(100, 28);
             this.btnSubmitSales.TabIndex = 16;
@@ -134,7 +134,7 @@
             // txtPrice
             // 
             this.txtPrice.Location = new System.Drawing.Point(265, 407);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(132, 22);
             this.txtPrice.TabIndex = 15;
@@ -143,16 +143,17 @@
             // 
             this.cboIMIENum.FormattingEnabled = true;
             this.cboIMIENum.Location = new System.Drawing.Point(265, 354);
-            this.cboIMIENum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboIMIENum.Margin = new System.Windows.Forms.Padding(4);
             this.cboIMIENum.Name = "cboIMIENum";
             this.cboIMIENum.Size = new System.Drawing.Size(160, 24);
             this.cboIMIENum.TabIndex = 14;
+            this.cboIMIENum.SelectedIndexChanged += new System.EventHandler(this.cboIMIENum_SelectedIndexChanged);
             // 
             // cboModNum
             // 
             this.cboModNum.FormattingEnabled = true;
             this.cboModNum.Location = new System.Drawing.Point(265, 299);
-            this.cboModNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboModNum.Margin = new System.Windows.Forms.Padding(4);
             this.cboModNum.Name = "cboModNum";
             this.cboModNum.Size = new System.Drawing.Size(160, 24);
             this.cboModNum.TabIndex = 13;
@@ -162,7 +163,7 @@
             // 
             this.cboCompName.FormattingEnabled = true;
             this.cboCompName.Location = new System.Drawing.Point(265, 256);
-            this.cboCompName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboCompName.Margin = new System.Windows.Forms.Padding(4);
             this.cboCompName.Name = "cboCompName";
             this.cboCompName.Size = new System.Drawing.Size(160, 24);
             this.cboCompName.TabIndex = 12;
@@ -171,7 +172,7 @@
             // txtEmailId
             // 
             this.txtEmailId.Location = new System.Drawing.Point(265, 212);
-            this.txtEmailId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmailId.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmailId.Name = "txtEmailId";
             this.txtEmailId.Size = new System.Drawing.Size(132, 22);
             this.txtEmailId.TabIndex = 11;
@@ -179,7 +180,7 @@
             // txtaddress
             // 
             this.txtaddress.Location = new System.Drawing.Point(265, 169);
-            this.txtaddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtaddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtaddress.Name = "txtaddress";
             this.txtaddress.Size = new System.Drawing.Size(132, 22);
             this.txtaddress.TabIndex = 10;
@@ -187,7 +188,7 @@
             // txtMobNum
             // 
             this.txtMobNum.Location = new System.Drawing.Point(265, 114);
-            this.txtMobNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMobNum.Margin = new System.Windows.Forms.Padding(4);
             this.txtMobNum.Name = "txtMobNum";
             this.txtMobNum.Size = new System.Drawing.Size(132, 22);
             this.txtMobNum.TabIndex = 9;
@@ -195,7 +196,7 @@
             // txtCustName
             // 
             this.txtCustName.Location = new System.Drawing.Point(265, 69);
-            this.txtCustName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCustName.Margin = new System.Windows.Forms.Padding(4);
             this.txtCustName.Name = "txtCustName";
             this.txtCustName.Size = new System.Drawing.Size(132, 22);
             this.txtCustName.TabIndex = 8;
@@ -290,9 +291,9 @@
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(571, 505);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "viewStock";
@@ -301,7 +302,7 @@
             // txtStock
             // 
             this.txtStock.Location = new System.Drawing.Point(275, 260);
-            this.txtStock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtStock.Margin = new System.Windows.Forms.Padding(4);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(132, 22);
             this.txtStock.TabIndex = 6;
@@ -310,7 +311,7 @@
             // 
             this.cboModNumVS.FormattingEnabled = true;
             this.cboModNumVS.Location = new System.Drawing.Point(275, 183);
-            this.cboModNumVS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboModNumVS.Margin = new System.Windows.Forms.Padding(4);
             this.cboModNumVS.Name = "cboModNumVS";
             this.cboModNumVS.Size = new System.Drawing.Size(160, 24);
             this.cboModNumVS.TabIndex = 5;
@@ -320,7 +321,7 @@
             // 
             this.cboCompNameVS.FormattingEnabled = true;
             this.cboCompNameVS.Location = new System.Drawing.Point(275, 85);
-            this.cboCompNameVS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboCompNameVS.Margin = new System.Windows.Forms.Padding(4);
             this.cboCompNameVS.Name = "cboCompNameVS";
             this.cboCompNameVS.Size = new System.Drawing.Size(160, 24);
             this.cboCompNameVS.TabIndex = 4;
@@ -373,7 +374,7 @@
             this.tabPage3.Controls.Add(this.label14);
             this.tabPage3.Controls.Add(this.txtIMEINumSearch);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(571, 505);
             this.tabPage3.TabIndex = 2;
@@ -384,7 +385,7 @@
             // 
             this.dgSearchIMIE.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgSearchIMIE.Location = new System.Drawing.Point(16, 230);
-            this.dgSearchIMIE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgSearchIMIE.Margin = new System.Windows.Forms.Padding(4);
             this.dgSearchIMIE.Name = "dgSearchIMIE";
             this.dgSearchIMIE.RowHeadersWidth = 51;
             this.dgSearchIMIE.Size = new System.Drawing.Size(515, 208);
@@ -415,7 +416,7 @@
             // txtIMEINumSearch
             // 
             this.txtIMEINumSearch.Location = new System.Drawing.Point(371, 87);
-            this.txtIMEINumSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIMEINumSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtIMEINumSearch.Name = "txtIMEINumSearch";
             this.txtIMEINumSearch.Size = new System.Drawing.Size(132, 22);
             this.txtIMEINumSearch.TabIndex = 0;
@@ -439,10 +440,11 @@
             this.ClientSize = new System.Drawing.Size(612, 555);
             this.Controls.Add(this.lblLogout);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "userHomepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "userHomepage";
+            this.Load += new System.EventHandler(this.userHomepage_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
