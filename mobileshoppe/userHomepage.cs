@@ -128,7 +128,7 @@ namespace mobileshoppe
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
             {
                 conn.Open();
-                cmd = new SqlCommand("SELECT IMEINO from tbl_Mobile  inner join tbl_Model on  tbl_Mobile.ModelID = tbl_Model.ModelID WHERE tbl_Model.ModelNumber = @ModelNumber", conn);
+                cmd = new SqlCommand("SELECT IMEINO from tbl_Mobile  inner join tbl_Model on  tbl_Mobile.ModelID = tbl_Model.ModelID WHERE tbl_Model.ModelNumber = @ModelNumber AND tbl_Mobile.Status <> 'Sold'", conn);
                 cmd.Parameters.AddWithValue("@ModelNumber", cboModNum.Text);
 
                 dr = cmd.ExecuteReader();

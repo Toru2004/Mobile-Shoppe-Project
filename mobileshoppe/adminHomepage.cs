@@ -260,7 +260,12 @@ namespace mobileshoppe
             {
 
                 string CompanyID = txtCompID.Text;
-                string CompanyName = txtCompName.Text;
+                string CompanyName = txtCompName.Text.Trim();
+                if (string.IsNullOrEmpty(CompanyName))
+                {
+                    MessageBox.Show("Vui lòng nhập tên công ty!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["cs"].ToString()))
                 {
                     cmd = new SqlCommand("Insert into tbl_Company values(@CompanyID, @CompanyName) ", conn);

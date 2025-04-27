@@ -738,7 +738,7 @@
             this.dtpDay.Name = "dtpDay";
             this.dtpDay.Size = new System.Drawing.Size(352, 28);
             this.dtpDay.TabIndex = 2;
-            this.dtpDay.Value = new System.DateTime(2023, 12, 12, 0, 0, 0, 0);
+            this.dtpDay.Value = new System.DateTime(2025, 4, 27, 0, 0, 0, 0);
             this.dtpDay.ValueChanged += new System.EventHandler(this.dtpDay_ValueChanged);
             // 
             // lblSearchDay
