@@ -296,7 +296,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(571, 505);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "viewStock";
+            this.tabPage2.Text = "View Stock";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // txtStock
@@ -378,7 +378,7 @@
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(571, 505);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "SearchCustomerbyIMEI";
+            this.tabPage3.Text = "Search Customer by IMEI";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // dgSearchIMIE
